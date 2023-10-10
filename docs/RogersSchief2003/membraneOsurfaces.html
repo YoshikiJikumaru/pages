@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>膜O曲面論</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="../../css/style.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css"integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ"crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {delimiters: [
+    {left: "\\[", right: "\\]", display: true},
+    {left: "$", right: "$", display: false}
+  ]});
+});
+</script>
+\[
+  \gdef\d{\partial}
+  \gdef\bR{\boldsymbol{r}}
+  \gdef\H{\mathcal{H}}
+  \gdef\bH{\boldsymbol{H}}
+  \gdef\oH{\overline{H}}
+  \gdef\uH{\underline{H}}
+  \gdef\K{\mathcal{K}}
+  \gdef\bK{\boldsymbol{K}}
+  \gdef\oK{\overline{K}}
+  \gdef\uK{\underline{K}}
+  \gdef\bN{\boldsymbol{N}}
+  \gdef\bR{\boldsymbol{R}}
+  \gdef\obR{\overline{\boldsymbol{R}}}
+  \gdef\ubR{\underline{\boldsymbol{R}}}
+  \gdef\X{\boldsymbol{X}}
+  \gdef\Y{\boldsymbol{Y}}
+\]
+</head>
+
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="SAMPLE SITE"></a></h1>
+</header>
+
+<nav id="menubar">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../gallery.html">Gallery</a></li>
+<li><a href="../../link.html">Link</a></li>
+</ul>
+</nav>
+
+<div id="contents">
+
+本ページでは「膜O曲面 (membrane O surfaces)」についてまとめる．
+<section>
+<h2>共役網とCombescure変換</h2>
+$\R^3$ 内の曲面 $\Sigma$ が局所的に写像 $\bR: D \to \Sigma \subset \R^3$ によってパラメトライズされているものとする．
+ここで $D \subset \R^2$ は領域であり，座標を $(x, y)$ で表す．
+$\bR$ が双曲型方程式
+\[
+\tag{1.1}
+\bR_{xy} = a \bR_x + b \bR_y,
+\]
+を満たすとき，座標 $(x, y)$ を<b>共役座標 (conjugate coordinates)</b>，アイソパラメトリックライン $x = const.$, $y=const.$ により曲面上に生成されるネットを <b>共役網 (conjugate net) </b> と呼ぶ．
+ 
+いま以下のようにしてポテンシャル $H$, $K$ を導入する：
+\[
+\tag{1.2}
+a = (\ln H)_y = \frac{H_y}{H}, \quad b = (\ln K)_x = \frac{K_x}{K}.
+\]
+さらにこれらのポテンシャル $H, K$ を用いて，接ベクトル $\bR_x$, $\bR_y$ を次のように分解する：
+\[
+\tag{1.3}
+\bR_x = \X H, \quad \bR_y = \Y K.
+\]
+この段階では $\X$, $\Y$ が単位接ベクトルであることなどは要請しないものとする．
+このとき，2階の双曲型方程式 (1) は以下の1階線型方程式系へ還元される：
+\[
+\tag{1.4}
+\X_y = p \Y, \quad \Y_x = q \X.
+\]
+ここで $p$, $q$ は次式で定義される：
+\[
+\tag{1.5}
+H_y = p K, \quad K_x = q H.
+\]
+式 (1.5) は線型方程式系 (1.4) の随伴 (adjoint) とみなすことができる．
+逆に，与えられたベクトルとスカラーの組 $(\X, \Y, H, K)$ および函数 $p, q$ が，関係式 (1.4), (1.5) によって関係づけられているとき，線型方程式系 (3) は両立条件 $\bR_{xy} = \bR_{yx}$ を満たし，曲面 $\Sigma \subset \R^3$ が得られる．
+
+いま (1.5) の別の解 $(H_*, K_*)$ が得られたとするとき，線型方程式系
+\[
+\tag{1.6}
+(\bR_*)_x = H_* \X, \quad (\bR_*)_y = K_* \Y,
+\]
+は両立条件 $(\bR_*)_{xy} = (\bR_*)_{yx}$ を満たし，別の曲面 $\Sigma_* \subset \R^3$ が定まる．
+曲面 $\Sigma_*$ を $\Sigma$ の <b>Combescure変換 (Combescure transformation)</b> と呼ぶ．
+Combescure変換により，対応する点では (座標線に沿った) 接ベクトルが平行である．
+さらにCombescure変換は共役網の条件 (1.1) を保存することが確かめられる．<br>
+  
+<p>
+E. Combescure, <a href="http://www.numdam.org/item/10.24033/asens.36.pdf" target="_blank">Sur les déterminants fonctionnels et les coordonnées curvilignes</a>, <i>Annales scientifiques de l'École Normale Supérieure, Serie 1</i> (1867) <b>4</b>, 93-131.
+</p>
+ 
+</section>
+
+<section>
+<h2>直交共役座標 (曲率線座標)</h2>
+
+以下では $\X$, $\Y$ はいずれも単位ベクトルとし，互いに直交するものと仮定する：
+\[
+\tag{7}
+\X \cdot \X = 1, \quad
+\Y \cdot \Y = 1, \quad
+\X \cdot \Y = 0.
+\]
+このとき座標 $(x, y)$ を直交共役座標または曲率線座標と呼ぶ．
+  
+曲面の単位法ベクトルを $\bN = \X \times \Y$ で表す．
+このとき (4) より
+\[
+\tag{8}
+\bN_x \cdot \Y = 0, \quad \bN_y \cdot \X = 0,
+\]
+となるので，
+\[
+\tag{9}
+\bN_x = \X H_\circ, \quad \bN_y = \Y K_\circ,
+\]
+となる $H_\circ$, $K_\circ$ が存在する．
+いま，関係式
+\[
+\tag{10}
+- \bN_x \cdot \X = - \frac{H_\circ}{H} = \kappa_1, \quad
+- \bN_y \cdot \Y = - \frac{K_\circ}{K} = \kappa_2,
+\]
+により定義される $\kappa_1$, $\kappa_2$ を主曲率と呼ぶ．
+定義より $H_\circ = - \kappa_1 H$, $K_\circ = - \kappa_2 K$ であり，このとき式 (9) は
+\[
+\tag{11}
+\bN_x = - \kappa_1 H \X = - \kappa_1 \bR_x, \quad
+\bN_y = - \kappa_2 K \Y = - \kappa_2 \bR_y,
+\]
+と表される．
+この式をWeingartenの公式と呼ぶ．
+Weingartenの公式はまた，球面 $\Sigma_\circ$ が曲面 $\Sigma$ のCombescure変換であることを示している．
+このとき，曲面の第一・第二基本形式は以下のように表される：
+\[
+I = H^2 \, dx^2 + K^2 \, dy^2, \quad
+II = \kappa_1 H^2 \, dx^2 + \kappa_2 K^2 \, dy^2.
+\]
+Combescure変換は，曲率線座標も保つことに注意．
+</section>
+
+<section>
+<h2>曲率線座標におけるGauss-Weingartenの公式，Gauss-Mainardi-Codazzi方程式</h2>
+正規直交枠 $\Phi = (\X, \Y, \bN)$ を用いて，Gauss-Weingartenの公式は線型方程式系
+\[
+\Phi_x = \Phi
+\begin{pmatrix}
+0 & p & H_\circ \\
+- p & 0 & 0 \\
+- H_\circ & 0 & 0
+\end{pmatrix}, \quad
+\Phi_y = \Phi
+\begin{pmatrix}
+0 & q & 0 \\
+- q & 0 & K_\circ \\
+0 & - K_\circ & 0
+\end{pmatrix}.
+\]
+で表される．
+Gauss-Weingartenの公式に対する両立条件 $(\Phi_x)_y = (\Phi_y)_x$ はGauss方程式
+\[
+p_y + q_x + H_\circ K_\circ = 0,
+\]
+およびMainardi-Codazzi方程式
+\[
+(H_\circ)_y = p K_\circ, \quad
+(K_\circ)_x = q H_\circ,
+\]
+である．
+特にGauss曲率を$\mathcal{K} = \kappa_1 \kappa_2$で定めると，Gauss方程式から
+\[
+\mathcal{K} = - \frac{1}{A_1 A_2} \left( \left( \frac{(A_1)_y}{A_2} \right)_y + \left( \frac{(A_2)_x}{A_1} \right)_x \right),
+\]
+が成り立つ．
+すなわちGauss曲率は第一基本形式の係数のみから定まる (Gaussの驚異の定理)．
+</section>
+
+<section>
+<h2>シェルの膜理論における釣り合い式と膜O曲面</h2>
+シェル理論およびシェルの膜理論についての詳細はこちらのページを参照．
+
+シェル中央面を $\bR$ で表す．
+法線方向に作用する荷重 $q_n$ に対し，膜応力を $T_1$, $T_2$，面内せん断を $S$ と表すと，膜の釣り合い式は以下のように表される：
+\[
+\begin{aligned}
+(KT_1)_x + (HS)_y + H_y S - K_x T_2 &= 0, \cr
+(KS)_x + (HT_2)_y + K_x S - H_y T_1 &= 0, \cr
+\kappa_1 T_1 + \kappa_2 T_2 + q_n &= 0
+\end{aligned}
+\]
+ここで主曲率線が主応力線に一致するという要請を課す．
+これは $S = 0$ とおくことに対応し，このとき釣り合い式は
+\[
+(KT_1)_x = K_x T_2, \quad
+(HT_2)_y = H_y T_1, \quad
+\kappa_1 T_1 + \kappa_2 T_2 + q_n = 0,
+\]
+と表される．いま
+\[
+\oH = HT_2, \quad \oK = KT_1,
+\]
+とおくと，釣り合い第1, 2式より
+\[
+\oH_y = \frac{H_y}{K} \cdot KT_1 = p \oK, \quad
+\oK_x = \frac{K_x}{H} \cdot HT_2 = q \oH,
+\]
+を得る．
+したがって定義より，
+\[
+\obR_x = \oH \X, \quad \obR_y = \oK \Y,
+\]
+なるCombescure変換 $\obR$ が存在する．<br>
+
+一方で釣り合い第3式より
+\[
+0 = HK (\kappa_1 T_1 + \kappa_2 T_2 + q_n)
+= - H_\circ \oK - K_\circ \oH + q_n HK
+\]
+
+</body>
+</html>

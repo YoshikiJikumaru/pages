@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>O曲面論 (Schief-Konopelchenko, 2002)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="../../css/style.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css"integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ"crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {delimiters: [
+    {left: "\\[", right: "\\]", display: true},
+    {left: "$", right: "$", display: false}
+  ]});
+});
+</script>
+\[
+  \gdef\d{\partial}
+  \gdef\bR{\boldsymbol{r}}
+  \gdef\H{\mathcal{H}}
+  \gdef\uH{\underline{H}}
+  \gdef\K{\mathcal{K}}
+  \gdef\uK{\underline{K}}
+  \gdef\bN{\boldsymbol{N}}
+  \gdef\bR{\boldsymbol{R}}
+  \gdef\ubR{\underline{\boldsymbol{R}}}
+  \gdef\X{\boldsymbol{X}}
+  \gdef\Y{\boldsymbol{Y}}
+\]
+</head>
+
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="SAMPLE SITE"></a></h1>
+</header>
+
+<nav id="menubar">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../gallery.html">Gallery</a></li>
+<li><a href="../../link.html">Link</a></li>
+</ul>
+</nav>
+
+<div id="contents">
+
+<section>
+
+本ページでは「O曲面 (O surfaces)」についてまとめる．
+<h2>共役網とCombescure変換</h2>
+
+$\R^3$ 内の曲面 $\Sigma$ が局所的に写像 $\bR: D \to \Sigma \subset \R^3$ によってパラメトライズされているものとする．
+ここで $D \subset \R^2$ は領域であり，座標を $(x, y)$ で表す．
+$\bR$ が双曲型方程式
+\[
+\tag{1.1}
+\bR_{xy} = a \bR_x + b \bR_y,
+\]
+を満たすとき，座標 $(x, y)$ を<b>共役座標 (conjugate coordinates)</b>，アイソパラメトリックライン $x = const.$, $y=const.$ により曲面上に生成されるネットを <b>共役網 (conjugate net) </b> と呼ぶ．
+
+いま以下のようにしてポテンシャル $H$, $K$ を導入する：
+\[
+\tag{1.2}
+a = (\ln H)_y = \frac{H_y}{H}, \quad b = (\ln K)_x = \frac{K_x}{K}.
+\]
+さらにこれらのポテンシャル $H, K$ を用いて，接ベクトル $\bR_x$, $\bR_y$ を次のように分解する：
+\[
+\tag{1.3}
+\bR_x = \X H, \quad \bR_y = \Y K.
+\]
+この段階では $\X$, $\Y$ が単位接ベクトルであることなどは要請しないものとする．
+このとき，2階の双曲型方程式 (1) は以下の1階線型方程式系へ還元される：
+\[
+\tag{1.4}
+\X_y = p \Y, \quad \Y_x = q \X.
+\]
+ここで $p$, $q$ は次式で定義される：
+\[
+\tag{1.5}
+H_y = p K, \quad K_x = q H.
+\]
+式 (1.5) は線型方程式系 (1.4) の随伴 (adjoint) とみなすことができる．
+逆に，与えられたベクトルとスカラーの組 $(\X, \Y, H, K)$ および函数 $p, q$ が，関係式 (1.4), (1.5) によって関係づけられているとき，線型方程式系 (3) は両立条件 $\bR_{xy} = \bR_{yx}$ を満たし，曲面 $\Sigma \subset \R^3$ が得られる．
+
+いま (1.5) の別の解 $(H_*, K_*)$ が得られたとするとき，線型方程式系
+\[
+\tag{1.6}
+(\bR_*)_x = H_* \X, \quad (\bR_*)_y = K_* \Y,
+\]
+は両立条件 $(\bR_*)_{xy} = (\bR_*)_{yx}$ を満たし，別の曲面 $\Sigma_* \subset \R^3$ が定まる．
+曲面 $\Sigma_*$ を $\Sigma$ の <b>Combescure変換 (Combescure transformation)</b> と呼ぶ．
+Combescure変換により，対応する点では (座標線に沿った) 接ベクトルが平行である．
+さらにCombescure変換は共役網の条件 (1.1) を保存することが確かめられる．<br>
+
+<p>
+E. Combescure, <a href="http://www.numdam.org/item/10.24033/asens.36.pdf" target="_blank">Sur les déterminants fonctionnels et les coordonnées curvilignes</a>, <i>Annales scientifiques de l'École Normale Supérieure, Serie 1</i> (1867) <b>4</b>, 93-131.
+</p>
+
+</section>
+
+<section>
+<h2>直交共役座標 (曲率線座標)</h2>
+
+以下では $\X$, $\Y$ はいずれも単位ベクトルとし，互いに直交するものと仮定する：
+\[
+\tag{7}
+\X \cdot \X = 1, \quad
+\Y \cdot \Y = 1, \quad
+\X \cdot \Y = 0.
+\]
+このとき座標 $(x, y)$ を直交共役座標または曲率線座標と呼ぶ．
+
+曲面の単位法ベクトルを $\bN = \X \times \Y$ で表す．
+このとき (4) より
+\[
+\tag{8}
+\bN_x \cdot \Y = 0, \quad \bN_y \cdot \X = 0,
+\]
+となるので，
+\[
+\tag{9}
+\bN_x = \X H_\circ, \quad \bN_y = \Y K_\circ,
+\]
+となる $H_\circ$, $K_\circ$ が存在する．
+いま，関係式
+\[
+\tag{10}
+H_\circ = - \kappa_1 H, \quad
+K_\circ = - \kappa_2 K,
+\]
+により定義される $\kappa_1$, $\kappa_2$ を主曲率と呼ぶ．
+このとき式 (9) は
+\[
+\tag{11}
+\bN_x = - \kappa_1 H \X = - \kappa_1 \bR_x, \quad
+\bN_y = - \kappa_2 K \Y = - \kappa_2 \bR_y,
+\]
+と表される．
+この式をWeingartenの公式と呼ぶ．
+Weingartenの公式はまた，球面 $\Sigma_\circ$ が曲面 $\Sigma$ のCombescure変換であることを示している．
+このとき，曲面の第一・第二基本形式は以下のように表される：
+\[
+I = H^2 \, dx^2 + K^2 \, dy^2, \quad
+II = \kappa_1 H^2 \, dx^2 + \kappa_2 K^2 \, dy^2.
+\]
+Combescure変換は，曲率線座標も保つことに注意．
+
+<!--
+さらに $\bN_*$ を $\bN$ のCombescure変換で単位球面上にあるものとすると
+\[
+(\bN_* - \bN)_x = ((H_\circ)_* - H_\circ) \X, \quad
+(\bN_* - \bN)_y = ((K_\circ)_* - K_\circ) \Y,
+\]
+-->
+</section>
+
+<section>
+<h2>O曲面の定義</h2>
+
+いま，次の条件を満たすベクトル$(\X, \Y)$, $\uH = (H_1, \ldots, H_n)$, $\uK = (K_1, \ldots, K_n)$ および函数 $p, q$ を考える：
+\[
+\tag{2.1}
+\X_y = q \Y, \quad \Y_x = p \X, \quad \uH_y = p \uK, \quad \uK_x = q \uH.
+\]
+
+すると，互いにCombescure変換の関係にある $(\bR_1, \ldots, \bR_n)$ によってパラメトライズされた曲面 $\Sigma_1, \ldots, \Sigma_n$ が得られる：
+\[
+\tag{2.2}
+(\bR_j)_x = \X H_j, \quad (\bR_j)_y = \Y K_j, \quad j = 1, \ldots, n.
+\]
+このとき $(3 \times n)$ 行列 $\ubR = (\bR_1, \ldots, \bR_n)$ を導入すると，(2.2) は
+\[
+\tag{2.3}
+\ubR_x = \X \uH, \quad \ubR_y = \Y \uK,
+\]
+と表される．
+いま $\X$, $\Y$ は $\ubR$ の列ベクトルからなる $\R^3$ 内の曲面 $\Sigma_1, \ldots, \Sigma_n$ の接ベクトルであり，座標線の直交条件は $\X \cdot \Y = 0$ と表される．
+一方で式 (2.3) は，$(3 \times n)$行列 $\ubR$ の行ベクトル $\bR^1$, $\bR^2$, $\bR^3$ を $\R^n$ 内の曲面 $\Sigma^1$, $\Sigma^2$, $\Sigma^3$ とみなすことにより，$\uH, \uK \in \R^n$ を接ベクトルとみなすことができる：
+\[
+\ubR = (\bR_1, \ldots, \bR_n)
+=
+\begin{pmatrix}
+\bR^1 \cr
+\bR^2 \cr
+\bR^3
+\end{pmatrix}.
+\]
+このとき $\R^n$ 内の適切な (擬) 内積により，直交条件 $\uH \cdot \uK = 0$ を課すことは自然であろう．
+$\R^n$ 上に擬内積を定める対称行列を $S = (S^{ij})$ と表す：
+\[
+\uH \cdot \uK = \sum_{i, j = 1}^n H_i S^{ij} K_j.
+\]
+曲面 $\Sigma_k$ 上の座標曲線に沿った変数変換
+\[
+(\d_x, \X, q) \to f(x) (\d_x, \X, q), \quad
+(\d_y, \Y, p) \to g(y) (\d_y, \Y, p),
+\]
+によって，双対曲面 $\Sigma^k$ 上の接ベクトル $\uH$, $\uK$ が保たれる．
+一方で，双対曲面 $\Sigma^k$ 上の座標曲線に沿った変数変換
+\[
+(\d_x, \uH, q) \to \tilde{f}(x) (\d_x, \uH, q), \quad
+(\d_y, \uK, p) \to \tilde{g}(y) (\d_y, \uK, p),
+\]
+によって，曲面 $\Sigma_l$ 上の接ベクトル $\X$, $\Y$ が保たれることに注意．<br>
+
+このような双対共役網 (dual conjugate nets) の概念は，
+<ol>
+  <li> 
+    G. Darboux, <a href="https://openlibrary.org/books/OL23310902M/Le%C3%A7ons_sur_les_syst%C3%A8mes_orthogonaux_et_les_coordonn%C3%A9es_curvilignes.", target="_blank">Sur les systemes orthogonaux et les coordonnees curvilignes</a> Paris Gauthier-Villars, 1910. 
+  </li>
+</ol>
+にその萌芽がみられる．
+可積分微分・差分幾何の文脈では，
+<ol>
+  <li> 
+    B. G. Konopelchenko and W. K. Schief, <a href="https://royalsocietypublishing.org/doi/abs/10.1098/rspa.1998.0292", target="_blank">Three-dimensional integrable lattices in Euclidean space: conjugacy and orthogonality</a>, <i>Proc. R. Soc. Lond. A</i> (1998) <b>454</b>, 3075-3104. 
+  </li>
+  <li> 
+    A. Doliwa and P. M. Santini, <a href="https://www.sciencedirect.com/science/article/abs/pii/S0393044000000115", target="_blank">The symmetric, $d$-invariant andEgorov reductions of the quadrilateral lattice</a>, <i>J. Geom. Phys.</i> (2000) <b>36</b>, 60-102.
+  </li>
+</ol>
+などに見られる．
+古典的なfundamental transformationsおよび関連する変換と関連し，$\ubR$ のような行列版「双線型ポテンシャル」の重要性は
+<ol>
+  <li> 
+    W. K. Schief and C. Rogers, <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/1467-9590.00082", target="_blank">Loewner transformations: adjoint and binary Darboux connections</a>. <i>Stud. Appl. Math.</i> (1998)<b>100</b>, 391-422.
+  </li>
+  <li> 
+    Q. P. Liu and M. Manas, <a href="https://arxiv.org/pdf/solv-int/9710014.pdf", target="_blank">Vectorial ribacour transformations for the Lame system</a>, <i>J. Phys. A</i> (1998) <b>31</b>, L193-L200.
+  </li>
+</ol>
+などで議論されている．
+
+<p>
+定義 (O曲面)：互いにCombescure変換の関係にある曲面の組 $(\bR_1, \ldots, \bR_n)$ によってパラメトライズされた$\R^3$ 内の曲面 $\Sigma_1, \ldots, \Sigma_n$ およびその双対 $\Sigma^1, \Sigma^2, \Sigma^3 \in \R^n$ が <b>O曲面 (O surfaces)</b> であるとは，$\R^n$上に擬内積を定める$n$次対称定行列 $S$ が存在し，曲面 $\Sigma_k$ および双対 $\Sigma^k$ のいずれの座標曲線も，$\R^3$ の通常のEuclid内積，および $S$ により定まる $\R^n$ 上の擬内積に関して直交しているときをいう．
+</p>
+
+「O曲面」という名称は，Eisenhartの本「<a href="https://archive.org/details/transformationso00eiseuoft" target="_blank">Transformation of Surfaces</a>」における「O nets (orthogonal conjugate nets)」が由来である．
+
+(2.1)式より，直交条件 $\uH \cdot \uK = 0$ から
+\[
+\uH_y \cdot \uH = 0, \quad \uK_x \cdot \uK = 0
+\]
+が従う．
+従って積分することができて，ある函数 $f(x)$, $g(y)$ によって
+\[
+\uH \cdot \uH = - f(x), \quad \uK \cdot \uK = - g(y),
+\]
+と表すことができる．
+
+
+</section>
+
+<section>
+<h2>O曲面の例1：Gauss曲率一定曲面</h2>
+
+主曲率は
+\[
+\kappa_1 = - \frac{H_\circ}{H}, \quad
+\kappa_2 = - \frac{K_\circ}{K}.
+\]
+と表されるので，Gauss曲率 $\K$，平均曲率 $\H$ は以下のように表される：
+\[
+\K = \kappa_1 \kappa_2 = \frac{H_\circ K_\circ}{HK}, \quad
+\H = \frac{1}{2} (\kappa_1 + \kappa_2) 
+= - \frac{1}{2} \left( \frac{H_\circ}{H} + \frac{K_\circ}{K} \right).
+\]
+
+まずは最もシンプルな場合を考えよう．1組のCombescure-related surfaces $\bR_1$, $\bR_2$ を考える：
+\[
+(\bR_i)_x = \X H_i, \quad
+(\bR_i)_y = \Y K_i, \quad i=1,2.
+\]
+このとき双対空間は $\R^2$ であり，$\R^2$ に行列
+\[
+S =
+\begin{pmatrix}
+1 & 0 \cr
+0 & 1
+\end{pmatrix}.
+\]
+によって定義される通常の内積
+\[
+x \cdot y = x_1 y_1 + x_2 y_2,
+\]
+を与えよう．
+このとき，直交条件は
+\[
+H_1 K_1 + H_2 K_2 = 0,
+\]
+と表される．
+$\bR_1$, $\bR_2$ のGauss曲率 $\K_1$, $\K_2$ はそれぞれ
+\[
+\K_1 = \frac{H_\circ K_\circ}{H_1 K_1}, \quad
+\K_2 = \frac{H_\circ K_\circ}{H_2 K_2},
+\]
+と表されるので，直交条件より
+\[
+\K_1 = - \K_2
+\]
+が得られる．
+一方，$\R^2$ に行列
+\[
+S =
+\begin{pmatrix}
+1 & 0 \cr
+0 & - 1
+\end{pmatrix}.
+\]
+により擬内積
+\[
+x \cdot y = x_1 y_1 - x_2 y_2,
+\]
+を与える場合を考えると，直交条件は
+\[
+H_1 K_1 - H_2 K_2 = 0,
+\]
+で与えられ，$\bR_1$, $\bR_2$ のGauss曲率は
+\[
+\K_1 = \K_2,
+\]
+となる．
+したがってCombescure変換の組 $\bR_1$, $\bR_2$ は，対応する点においてGauss曲率の絶対値が等しければ，O曲面をなすことがわかる．
+特に $\bR_2$ の値域が単位球面 $S^2$ であれば，$\K_2 = 1$ であり，$\bR_1$ はGauss曲率一定曲面である．<br>
+
+Gauss曲率が正で一定の曲面は平均曲率一定曲面の平行曲面として表すことができ，Gauss方程式は (座標 $(x, y)$ が双等温座標という条件の下) 楕円型sinh-Godon方程式である：
+\[
+\omega_{xx} + \omega_{yy} + \sinh \omega = 0.
+\]
+Gauss曲率が負で一定の曲面は (双曲型) sine-Gordon方程式
+\[
+\omega_{xx} - \omega_{yy} = \sin \omega.
+\]
+</section>
+
+<section>
+<h2>O曲面の例2：双等温曲面・極小曲面</h2>
+
+$S$ として次の行列を与える：
+\[
+S = 
+\begin{pmatrix}
+0 & 1 \cr
+1 & 0
+\end{pmatrix}.
+\]
+このとき直交条件は
+\[
+H_1 K_2 + H_2 K_1 = 0,
+\]
+と表すことができる．
+このとき $(H_1 H_2)_y = 0$, $(K_1 K_2)_x = 0$ であるから，座標線に沿った変数変換によって
+\[
+H_1 H_2 = 1, \quad K_1 K_2 = - 1,
+\]
+と仮定してよい．
+直交条件より，
+\[
+\frac{K_1}{H_1} = - \frac{1}{K_2 H_1} = \frac{1}{H_2 K_1} = \frac{H_1}{K_1} \iff H_1^2 = K_1^2. 
+\]
+同様にして
+\[
+\frac{K_2}{H_2} = -\frac{1}{K_1H_2} = \frac{1}{H_1K_2} = \frac{H_2}{K_2} \iff H_2^2 = K_2^2,
+\]
+が得られるので，$\bR_1$, $\bR_2$ の第一基本形式 $I_1$, $I_2$ はそれぞれ
+\[
+I_1 = H_1^2 (dx^2 + dy^2), \quad
+I_2 = H_2^2 (dx^2 + dy^2),
+\]
+となる．
+いいかえると，$\bR_1$, $\bR_2$ はともに等温曲率線座標を許容する．
+等温曲率線座標を許容する曲面を<b>双等温曲面 (isothermic surfaces) </b>と呼ぶ．
+\[
+H_1 = K_1, \quad H_2 = - K_2,
+\]
+ととると，<b>Christoffel変換</b>が次式で表される．
+\[
+(\bR_2)_x = \X H_2 = \frac{\X}{H_1} = \frac{(\bR_1)_x}{H_1^2}, \quad
+(\bR_2)_y = \Y K_2 = - \frac{\Y}{K_1} = - \frac{(\bR_1)_y}{H_1^2}.
+\]
+特に $\bR_2$ が $\bR_1$ のGauss写像 $\bN$ であるとき，すなわち $H_2 = H_\circ$, $K_2 = K_\circ$ であるとき，
+\[
+\H_1 
+= - \frac{1}{2} \left( \frac{H_\circ}{H_1} + \frac{K_\circ}{K_1} \right)
+= - \frac{1}{2} \left( \frac{H_2}{H_1} + \frac{K_2}{K_1} \right)
+= - \frac{H_2 K_1 + H_1 K_2}{2 H_1 K_1}
+= 0
+\]
+となり，$\bR_1$ は極小曲面となる．
+すなわち極小曲面のChristoffel変換が球面となることを示している．
+
+</section>
+
+<section>
+<h2>O曲面の例3：平均曲率一定曲面とBonnetの定理</h2>
+
+前節において極小曲面のクラスがO曲面の枠組みで捉えられることを示した．
+極小曲面は平均曲率がゼロで一定の曲面であるが，ゼロでない平均曲率一定 (Constant Mean Curvature, CMC) 曲面も自然にO曲面の枠組みで捉えることができる．
+以下ではCMC曲面と呼ぶときにはゼロでない平均曲率一定曲面を指すものとし，平均曲率が$H$で一定の曲面をCMC-$H$曲面と呼ぶ．
+CMC曲面の以下の特徴に着目しよう：
+<ol>
+  <li>CMC曲面は等温曲率線座標を許容する双等温曲面である．</li>
+  <li>CMC曲面は，Gauss曲率が正で一定の曲面の平行曲面として表すことができる (Bonnetの定理)．</li>
+</ol>
+すなわちCMC曲面は前節で扱った双等温曲面の枠組みでも，前々節で扱ったGauss曲率一定曲面の枠組みでも捉えられるはずである．
+O曲面の枠組みで捉えるための対称行列はそれぞれ
+\[
+\begin{pmatrix}
+0 & 1 \cr
+1 & 0
+\end{pmatrix}, \quad
+\begin{pmatrix}
+1 & 0 \cr
+0 & - 1
+\end{pmatrix},
+\]
+であったが，対角化
+\[
+\begin{pmatrix}
+1 & 0 \cr
+0 & - 1
+\end{pmatrix}
+=
+P
+\begin{pmatrix}
+0 & 1 \cr
+1 & 0
+\end{pmatrix}
+P^{-1}, \quad
+P = \frac{1}{2}
+\begin{pmatrix}
+1 & 1 \cr
+- 1 & 1
+\end{pmatrix}
+\]
+に注意して，この事実を曲面のレベルで書き直すと，以下のように自然にCMC曲面を捉えることができる．<br>
+
+$\bR_1$, $\bR_2$ を互いにChristoffel変換の関係にある双等温曲面の組とする．
+先の対角化に現れた行列 $P$ を利用して，$\bR_+$, $\bR_-$ を以下のように定める：
+\[
+\begin{pmatrix}
+\bR_+ \cr
+\bR_-
+\end{pmatrix}
+= \frac{1}{2}
+\begin{pmatrix}
+1 & 1 \cr
+- 1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+\bR_1 \cr
+\bR_2
+\end{pmatrix}
+= \frac{1}{2}
+\begin{pmatrix}
+\bR_2 + \bR_1 \cr
+\bR_2 - \bR_1
+\end{pmatrix},
+\]
+関係式を書き換えると
+\[
+\bR_1 = \bR_+ - \bR_-, \quad
+\bR_2 = \bR_+ + \bR_-,
+\]
+であることに注意．
+このとき
+\[
+H_\pm = \frac{1}{2} (H_2 \pm H_1), \quad
+K_\pm = \frac{1}{2} (K_2 \pm K_1),
+\]
+であり，定義から
+\[
+(H_+,\, H_-)
+\begin{pmatrix}
+1 & 0 \cr
+0 & -1
+\end{pmatrix}
+\begin{pmatrix}
+K_+ \cr
+K_-
+\end{pmatrix}
+= \frac{1}{2}
+(H_1,\, H_2)
+\begin{pmatrix}
+0 & 1 \cr
+1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+K_1 \cr
+K_2
+\end{pmatrix}
+= 0
+\]
+となるので $\bR_+$, $\bR_-$ はO曲面である．
+特に $\bR_+$, $\bR_-$ のGauss曲率 $\K_+$, $\K_-$ は等しいことがわかり，具体的には
+\[
+\K_\pm = \frac{H_\circ K_\circ}{H_\pm K_\pm} = \frac{4 H_\circ K_\circ}{H_1 K_1 + H_2 K_2},
+\]
+となる．
+いま曲面 $\Sigma_-$ が $\bR_1$, $\bR_2$ のGauss写像である状況を考えよう：
+\[
+\bR_- = \bN, \quad H_- = H_\circ, \quad K_- = K_\circ.
+\]
+このとき $\K_\pm = 1$ であり，
+\[
+\begin{aligned}
+&\H_1 
+= - \frac{1}{2} \left( \frac{H_\circ}{H_1} + \frac{K_\circ}{K_1} \right)
+= - \frac{1}{4} \left( \frac{H_2}{H_1} - 1 + \frac{K_2}{K_1} - 1 \right)
+= \frac{1}{2}, \cr
+&\H_2 
+= - \frac{1}{2} \left( \frac{H_\circ}{H_2} + \frac{K_\circ}{K_2} \right)
+= - \frac{1}{4} \left( 1 - \frac{H_1}{H_2} + 1- \frac{K_1}{K_2} \right)
+= - \frac{1}{2}.
+\end{aligned}
+\]
+すなわち $\Sigma_1$, $\Sigma_2$ はそれぞれ平均曲率が $1/2$, $-1/2$ で一定の曲面である．
+さらに
+\[
+\bR_1 = \bR_+ - \bN, \quad
+\bR_2 = \bR_+ + \bN,
+\]
+であるから，$\Sigma_1$, $\Sigma_2$ は，Gauss曲率が $1$ で一定の曲面 $\Sigma_+$ の (高さ $\pm 1$ の) 平行曲面として実現されることを示している．<br>
+
+またこの節での観察は次のようにみなすこともできる：対応する点においてGauss曲率が等しく，互いにCombescure変換の関係にある曲率線座標で表された曲面 $\Sigma_+$, $\Sigma_-$ に対して，
+\[
+\bR_1 = \bR_+ - \bR_-, \quad
+\bR_2 = \bR_+ - \bR_-,
+\]
+で定まるCombescure変換の組 $(\bR_1, \bR_2)$ は双等温曲面であり，互いにChristoffel変換の関係となる．
+
+</section>
+
+<section>
+<h2>O曲面の例4：線型Weingarten曲面</h2>
+
+$\alpha$, $\beta$, $\gamma$ を定数として，関係式
+\[
+\alpha \K + 2 \beta \H = \gamma,
+\]
+を満たす曲面を<b>線型Weingarten曲面 (linear Weingarten surface)</b>と呼ぶ．
+\[
+\alpha \K + 2 \beta \H = \gamma
+\iff \alpha \frac{H_\circ K_\circ}{H K} - \beta \left( \frac{H_\circ}{H} + \frac{K_\circ}{K} \right) = \gamma
+\iff \gamma HK + \beta (H_\circ K + H K_\circ) -\alpha H_\circ K_\circ = 0,
+\]
+であるから，以下のように書き直すことができる：
+\[
+\uH S \uK^T = 0, \quad
+\uH = (H, H_\circ), \quad
+\uK = (K, \K_\circ), \quad
+S =
+\begin{pmatrix}
+\gamma & \beta \cr
+\beta & - \alpha
+\end{pmatrix}.
+\]
+前節で考察したことと同様にして，$S$を対角化する行列を通じて曲面 $\Sigma$ と $\bN$ の適切な線型和 (平行曲面とスケーリング) をとることにより，以下のようにGauss曲率一定曲面の平行曲面 (とそれらのスケーリング) で表されることがわかる：
+<ol>
+  <li>$\gamma \alpha - \beta^2 > 0$ のときはGauss曲率が正で一定の曲面 (あるいはCMC曲面) の平行曲面．Gauss方程式は楕円型sinh-Gordon方程式．</li>
+  <li>$\gamma \alpha - \beta^2 < 0$ のときはGauss曲率が負で一定の曲面の平行曲面．Gauss方程式は双曲型sine-Gordon方程式．</li>
+</ol>
+</section>
+
+<section>
+<h2>O曲面の例5：Guichard曲面</h2>
+
+Guichard (1900) のComptes Rendus de l'Academie des Sciencesにある論文<br>
+
+C. Guichard, <a href="https://gallica.bnf.fr/ark:/12148/bpt6k3086n.f159", target="_blank">Sur les surfaces isothermiques</a>. <i>C. R. Acad. Sci. Paris</i> <b>130</b> (1900), 159-162.<br>
+
+には以下のような曲面のクラスが提示されている：<br>
+
+Il existe une surface $(N')$ ayant m\^{e}me image sph\'{e}rique de ses lignes de courbure que la surface $N$ et telle que si $R_1$ et $R_2$ sont les rayons de courvure principaux de $(N)$, $R_1'$ et $R_2'$ les rayons correspondants de $(N')$, on ait
+\[
+R_1 R_2' + R_2 R_1' = const.
+\] 
+la constante n' \'{e}tant pas nulle. <br>
+
+英語に翻訳しておくと：<br>
+There is a surface $(N')$ having the same spherical image of its lines of curvature as the surface $(N)$ and such that if $R_1$ and $R_2$ are the main radii of curvature of $(N)$, $R_1'$ and $R_2'$ are the corresponding radii of $(N')$, 
+\[
+R_1 R_2' + R_2 R_1' = const.
+\] 
+we have the constant being not zero.<br>
+
+曲面 $\Sigma$, $\Sigma'$ の主曲率をそれぞれ $\kappa_1$, $\kappa_2$, $\kappa_1'$, $\kappa_2'$ とすると
+\[
+\frac{1}{\kappa_1 \kappa_2'} + \frac{1}{\kappa_2 \kappa_1'} = const.
+\]
+と表される．<br>
+
+Combescure-related surfaces $\bR = \bR_1$, $\bR' = \bR_2$ $\bR_3$ を考える．
+このとき行列
+\[
+S = 
+\begin{pmatrix}
+0 & 1 & 0 \cr
+1 & 0 & 0 \cr
+0 & 0 & 1
+\end{pmatrix},
+\]
+によって定まる擬内積による直交条件 $\uH \cdot \uK = 0$ は
+\[
+H_1 K_2 + H_2 K_1 + H_3 K_3 = 0,
+\]
+と表される．
+特に $\bR_3 = \bN$ のとき，$H_3 = H_\circ$, $K_3 = K_\circ$ であるから
+\[
+\frac{H_1 K_2}{H_\circ K_\circ} + \frac{H_2K_1}{H_\circ K_\circ} + 1 = 0
+\iff \frac{1}{\kappa_1 \kappa_2'} + \frac{1}{\kappa_1' \kappa_2} + 1 = 0,
+\]
+が得られる．
+したがってこのとき $\Sigma$, $\Sigma'$ はGuichard曲面のペアとなる．
+行列 $S$ の形からわかるように，Guichard曲面は双等温曲面のある種の一般化である．
+
+</section>
+
+<section>
+<h2>O曲面の例6：Petot曲面</h2>
+A. Petotによって1891年に科学アカデミー紀要に提出されたPetot曲面も (ジェネリックには) O曲面の射程範囲となる (一般のPetot曲面はPetot O曲面のCombescure変換として表すことができる)．<br>
+
+A. Petot, <a href="https://gallica.bnf.fr/ark:/12148/bpt6k3068q/f1426.item", target="_blank">Sur certaines systemes de coordonnees spheriques et sur les systemes triple orthogonaux correspondants.</a> <i>C. R. Acad. Sci Paris</i> <b>112</b> (1891), 1426-1429.<br>
+
+Petot O曲面は，双対空間を $\R^3$ と同一視することで得られる：
+\[
+\uH = \X^T, \quad \uK = \Y^T, \quad p = q.
+\]
+したがって，O曲面 $\Sigma_1$, $\Sigma_2$, $\Sigma_3$ はCombescure-relatedな3つのPetot曲面の組である．
+また定義より，"位置ベクトル"を表す行列 $\ubR$ は
+\[
+\ubR_x = \X \uH = \X \X^T = \uH^T \uH, \quad
+\ubR_y = \Y \uK = \Y \Y^T = \uK^T \uK,
+\]
+を満たす．
+$p = q$ より，曲面 $\Sigma_i$ の第一基本形式 $I_i = H_i^2 \, dx^2 + K_i^2 \, dy^2$ の係数について
+\[
+(H_i^2)_y = 2 H_i (H_i)_y = 2 p H_i K_i = 2 q H_i K_i = 2 (K_i)_x K_i = (K_i^2)_x. 
+\]
+が成り立つ．ゆえに
+\[
+(\varphi_i)_x = H_i^2, \quad
+(\varphi_i)_y = K_i^2,
+\]
+となるポテンシャル $\varphi_i$ が存在する．
+言い換えると，曲面 $\Sigma_i$ の第一基本形式 $I_i$ が
+\[
+I_i = (\varphi_i)_x \, dx^2 + (\varphi_i)_y \, dy^2,
+\]
+という形で表される．
+特にこの性質は，Petot曲面がDarboux-Egorov型の三重直交系のクラスに属することを示す．
+<ol>
+  <li>D. Egorov, <a href="https://gallica.bnf.fr/ark:/12148/bpt6k3087z.f668">Sur les systemes orthogonaux admettant un groupe continu de transformations de Combescure.</a> <i>C. R. Acad. Sci. Paris</i> <b>131</b> (1900), 668-671.</li>
+  <li>D. Egorov, <a href="https://gallica.bnf.fr/ark:/12148/bpt6k30888.f82">Sur les systemes orthogonaux admettant un groupe de transformations de Combescure.</a> <i>C. R. Acad. Sci. Paris</i> <b>132</b> (1901), 74-77.</li>
+</ol>
+
+</section>
+
+<section>
+<h2>O曲面の例7：$\Omega$ 曲面</h2>
+
+Guichard曲面および双等温曲面のさらなる一般化として，Demoulinにより提唱された $\Omega$ 曲面もO曲面の射程範囲であることが知られている．
+
+<ol>
+  <li>A. Demoulin, <a href="https://gallica.bnf.fr/ark:/12148/bpt6k3106p.f590", target="_blank">Sur les surfaces $R$ et les surfaces $\Omega$</a>, <i>C. R. Acad. Sci. Paris</i> <b>153</b> (1911), 590-593.</li>
+  <li>F. E. Burstall, J. Cho, U. Hertrich-Jeromin, M. Pember and W. Rossman, <a href="https://doi.org/10.1112/plms.12499", target="_blank">Discrete $\Omega$-nets and Guichard nets via discrete Koenigs nets</a>, <i>Proc. Lond. Math. Soc.</i>, <b>126</b>(2) (2023), 790-836.</li>
+</ol>
+
+一般化の様子を少し整理してみると：
+<ol>
+  <li> Isothermic surfaces (Bour, 1962): Christoffel変換の関係にある曲面 $\Sigma_1 = \Sigma$, $\Sigma_2 = \Sigma'$  に対し，直交条件
+    \[
+    H_1 K_2 + H_2 K_1 = 0.
+    \]
+    主曲率を $\kappa_1$, $\kappa_2$, $\kappa_1'$, $\kappa_2'$ とおくと
+    \[
+    \frac{1}{\kappa_1 \kappa_2'} + \frac{1}{\kappa_1' \kappa_2} = \frac{H_1K_2+H_2K_1}{H_\circ K_\circ} = 0.
+    \]
+  </li>
+  <li> Guichard曲面 (Guichard, 1900)：
+    \[
+    \frac{1}{\kappa_1 \kappa_2'} + \frac{1}{\kappa_1' \kappa_2} = const.
+    \]
+  </li>
+  <li> $\Omega$曲面 (Demoulin, 1911)：Combescure-related surfaces $\Sigma_1 = \Sigma$, $\Sigma_2 = \Sigma'$, $\Sigma_3 = \Sigma_\circ'$ を考える．
+    $\Sigma_3 = \Sigma_\circ'$ の主曲率を $l_1$, $l_2$ で表すと，
+    \[
+    \frac{1}{\kappa_1 \kappa_2'} + \frac{1}{\kappa_1' \kappa_2} = \frac{1}{l_1} + \frac{1}{l_2}.
+    \]
+  </li>
+</ol>
+最後の式をO曲面の枠組みで見直す：$\bR_4 = \bN$ をGauss写像とすると
+\[
+\frac{1}{\kappa_1 \kappa_2'} + \frac{1}{\kappa_1' \kappa_2} = \frac{1}{l_1} + \frac{1}{l_2}
+\iff \frac{H_1 K_2 + H_2 K_1}{H_\circ K_\circ} = - \frac{H_3}{H_\circ} - \frac{K_3}{K_\circ}
+\iff H_1 K_2 + H_2 K_1 + H_3 K_\circ + K_3 H_\circ = 0,
+\]
+と表せるので，
+\[
+\uH = (H_1, H_2, H_3, H_\circ), \quad
+\uK = (K_1, K_2, K_3, K_\circ), \quad
+S = 
+\begin{pmatrix}
+0 & 1 & 0 & 0 \cr
+1 & 0 & 0 & 0 \cr
+0 & 0 & 0 & 1 \cr
+0 & 0 & 1 & 0
+\end{pmatrix},
+\]
+とおくと $\Omega$ 曲面の条件は直交条件
+\[
+\uH \cdot \uK = 0,
+\]
+として表すことができる．
+
+</section>
+
+<section>
+<h2>O曲面の例8：膜O曲面</h2>
+膜O曲面 (membrane O surfaces) については<a href="../RogersSchief2003/membraneOsurfaces.html">こちら</a>を参照．
+</section>
+
+<section>
+<h2>O曲面のBacklund変換</h2>
+
+</section>
+
+
+</body>
+</html>

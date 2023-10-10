@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>O曲面論 (Schief-Konopelchenko, 2002)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="../../css/style.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css"integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ"crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {delimiters: [
+    {left: "\\[", right: "\\]", display: true},
+    {left: "$", right: "$", display: false}
+  ]});
+});
+</script>
+\[
+  \gdef\be{\boldsymbol{e}}
+  \gdef\d{\partial}
+  \gdef\br{\boldsymbol{r}}
+  \gdef\H{\mathcal{H}}
+  \gdef\uH{\boldsymbol{H}}
+  \gdef\uH{\underline{H}}
+  \gdef\K{\mathcal{K}}
+  \gdef\uK{\boldsymbol{K}}
+  \gdef\uK{\underline{K}}
+  \gdef\bN{\boldsymbol{N}}
+  \gdef\bR{\boldsymbol{R}}
+  \gdef\X{\boldsymbol{X}}
+  \gdef\Y{\boldsymbol{Y}}
+  \gdef\a{\alpha}
+  \gdef\<{\langle}
+  \gdef\>{\rangle}
+\]
+</head>
+
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="SAMPLE SITE"></a></h1>
+</header>
+
+<nav id="menubar">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../gallery.html">Gallery</a></li>
+<li><a href="../../link.html">Link</a></li>
+</ul>
+</nav>
+
+<div id="contents">
+
+<section>
+
+<h2>共役網とCombescure変換</h2>
+
+$\br^3$ 内の曲面 $\Sigma$ が局所的に写像 $\brr: D \to \br^3$ によってパラメトライズされているものとする．
+ここで $D \subset \br^2$ は領域であり，座標を $(x, y)$ で表す．
+$\brr$ が双曲型方程式
+\[
+\tag{1}
+\brr_{xy} = a \brr_x + b \brr_y,
+\]
+を満たすとき，座標 $(x, y)$ を<b>共役座標 (conjugate coordinates)</b>，アイソパラメトリックライン $x = const.$, $y=const.$ により曲面上に生成されるネットを <b>共役網 (conjugate net) </b> と呼ぶ．
+
+<h2>曲面論における基本的な記号</h2>
+
+本章では，曲面論から基本的な関係式について復習する．
+読者には微分幾何学とベクトル解析についての基礎知識を仮定する．
+
+すべての滑らかな曲面は，デカルト座標において$3$つの方程式によって決定される：
+\[
+\tag{2.1}
+x = f_1 (\a_1, \a_2), \quad
+y = f_2 (\a_1, \a_2), \quad
+z = f_3 (\a_1, \a_2).
+\]
+ここで$f_1, f_2, f_3$は$2$変数$\a_1, \a_2$に関して連続な一価関数である．
+
+これらのパラメータの範囲は，曲面のすべての点が値のペア $(\a_1, \a_2)$ と一対一対応があるような範囲に制限して考える．
+このとき，これらのパラメータは考えている曲面の<b>曲線座標 (curvilinear coordinates)</b>と呼ばれる．
+
+式\eqref{eq:2.1}におけるパラメータ $\a_2$ を連続する異なる値に固定し，$\a_1$ を動かすとき，曲面上に曲線の族が得られ，これらを座標線 $\a_1$ と名付ける．
+同様に，$\a_1$ を固定するときに $\a_2$ を動かすと，第2の曲線の族が得られ，これを座標線 $\a_2$ と呼ぶ．
+上記の変数の範囲の制約条件によって，曲面上の任意の点に対し，その点を通る曲線がこれら$2$つの曲線族の中からちょうど$2$つだけ定まる．
+よって，曲面上のすべての点は$2$つの座標線$\a_1, \a_2$の共通部分と考えることができる．
+
+一つの曲面に対し，関数$f_1, f_2, f_3$のとり方は無限に存在し，とり方に応じて曲面上の座標線の形は変わる．
+ところが，これらの候補は等しく有用であるというわけではない．
+一般に，これらの選択肢のうち，最も功利的であるのは曲線座標系の中で曲面に対する公式が最も簡単な形となるものである．
+そのような座標系は，座標曲線の$2$つの族が，同時に曲面の主曲率線でもあるようにとることである．
+そのような座標系は直交座標である，というのも曲面上の主曲率の方向は互いに直交するからである．
+以下では，この曲線座標が導入されているものとする．
+
+$3$つのスカラー方程式\eqref{eq:2.1}は，単一のベクトル方程式
+\[
+\tag{eq:2.2}
+\br = \br (\a_1, \a_2)
+\]
+に対応し，座標軸$x, y, z$への射影が\eqref{eq:2.1}で与えられる．
+変数$\a_1, \a_2$に関する$\br$の偏微分を計算しよう：
+\[
+\tag{eq:2.3}
+\br_{\a_1} = \frac{\d \br}{\d \a_1}, \quad
+\br_{\a_2} = \frac{\d \br}{\d \a_2}.
+\]
+ここで，ベクトル$\br_{\a_1}, \br_{\a_2}$は曲面の各点において座標線$\a_1, \a_2$にそれぞれ接する．
+結果として，曲線座標の一つパラメータの増加に従って，対応する座標線に対応する方向における曲面上のベクトル$\br$が動く．
+よって，ベクトル
+\[
+\tag{eq:2.4}
+d \s = \frac{\d \br}{\d \a_1} d \a_1 + \frac{\d \br}{\d \a_2} d \a_2
+\]
+は，曲面上の点$(\a_1, \a_2)$, $(\a_1 + d\a_1, \a_2 + d\a_2)$を結ぶ線分の大きさと向きに対応する．
+
+この線分の長さの二乗は，
+\[
+\tag{eq:2.5}
+|d \s|^2 = |\br_{\a_1}|^2 d\a_1^2 + 2 \< \br_{\a_1}, \br_{\a_2} \> d\a_1 d\a_2 + |\br_{\a_2}|^2 d \a_2^2
+\]
+で与えられる．
+記号$|\cdot|^2$はベクトルとそれ自身との内積を表し，ベクトルの長さの二乗に等しい．
+同様に，記号$\< \cdot, \cdot \>$は$2$つのベクトルの内積を表す．
+
+新しく次の記号を導入する：
+\[
+\begin{aligned}
+|\br_{\a_1}|^2 &= A_1^2 = \left( \frac{\d x}{\d \a_1} \right)^2 + \left( \frac{\d y}{\d \a_1} \right)^2 + \left( \frac{\d z}{\d \a_1} \right)^2, \cr
+|\br_{\a_2}|^2 &= A_2^2 = \left( \frac{\d x}{\d \a_2} \right)^2 + \left( \frac{\d y}{\d \a_2} \right)^2 + \left( \frac{\d z}{\d \a_2} \right)^2. \tag{eq:2.6}
+\end{aligned}
+\]
+曲線座標の直交性の仮定により，
+\[
+\tag{eq:2.7}
+\< \br_{\a_1}, \br_{\a_2} \> = 0
+\]
+が成り立つ．
+
+よってこのとき式\eqref{eq:2.5}は次のように表せる：
+\[
+\tag{eq:2.8}
+ds^2 = A_1^2 d\a_1^2 + A_2^2 d\a_2^2.
+\]
+よって曲線座標のうち一つのパラメータが動くとき，
+\[
+\tag{eq:2.9}
+ds_1 = A_1 d\a_1, \quad
+ds_2 = A_2 d\a_2
+\]
+なることを得る．
+ここで$ds_1, ds_2$はそれぞれ，曲線座標の増分$d \a_1, d\a_2$に対応する座標線$\a_1, \a_2$に沿う弧長の増分である．
+$A_1, A_2$はそれぞれ{\bf Lam\'{e}パラメータ}と呼ばれる．
+
+以降では，曲面上の点の関数であるすべてのベクトルは，曲面に接する座標線$\a_1, \a_2$の方向と，法線方向に射影して考える．
+これらのreference axesは，曲面上の一点から別の点へ移るときに変化するので，これらのベクトルの$\a_1, \a_2$に関する微分を観察する必要がある．
+
+考えている系に対し，すべてのベクトル$\T$が
+\[
+\tag{eq:2.10}
+T = T_{\a_1} \be_1 + T_{\a_2} \be_2 + T_n \be_n
+\]
+と表せる．
+ここで $T_{\a_1}, T_{\a_2}, T_n$ はスカラーであり，$\be_1, \be_2, \be_n$ は直交する単位ベクトル
+\[
+\tag{eq:2.11}
+\be_1 = \frac{1}{A_1} \br_{\a_1}, \quad
+\be_2 = \frac{1}{A_2} \br_{\a_2}, \quad
+\be_n = \be_1 \times \be_2,
+\]
+である．
+ゆえに，ベクトルに対する微分律の研究は，この単位ベクトル\beqref{eq:2.11}に対するそれに帰着させることができる．
+
+\beqref{eq:2.11}の最後の式において，シンボル$\times$はベクトル積を表す．
+以降，系$\be_1, \be_2, \be_n$は右手系であると仮定する．
+さらに，$\be_n$は曲面の凸方向を向く（あるいは曲率半径の符号が等しくないときは，負の曲率半径の中心を向く）ようにしておく．
+これらの条件は互いに矛盾することはない．
+というのも，$\a_1, \a_2$に対する正の向きのとり方は任意に選べるからである．
+
+まず，単位ベクトル$\be_1, \be_2, \be_n$に対する微分律を計算するところから始めよう\footnote{訳注：Gauss-Weingartenの公式にあたる．}．
+座標線$\a_1$上の$2$つの十分近い
+
+</section>
+</body>
+</html>

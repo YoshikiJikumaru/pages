@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>曲面論の基本的な記号の整理</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="../../css/style.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css"integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ"crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {delimiters: [
+    {left: "\\[", right: "\\]", display: true},
+    {left: "$", right: "$", display: false}
+  ]});
+});
+</script>
+\[
+  \gdef\rr{\boldsymbol{r}}
+  \gdef\bN{\boldsymbol{N}}
+  \gdef\X{\boldsymbol{X}}
+  \gdef\Y{\boldsymbol{Y}}
+\]
+</head>
+
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="SAMPLE SITE"></a></h1>
+</header>
+
+<nav id="menubar">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../gallery.html">Gallery</a></li>
+<li><a href="../../link.html">Link</a></li>
+</ul>
+</nav>
+
+<div id="contents">
+
+<section>
+
+<h2>曲面論の基本的な記号</h2>
+<p>$D \subset \R^2$ を領域とし，座標を $(x, y)$ で表す．</p>
+<p>$\R^3$ へのはめ込み $\rr : D \to \R^3$ を<b>曲面片 (surface patch)</b>と呼ぶ．法ベクトルを $\bN$ で表す．</p>
+<p>曲面上のネット$x=const.$, $y=const.$が<b>共役網 (conjugate net)</b>であるとは，$r_{xy} \perp N$であるときをいう．以下では $\rr$ は共役網であるとする．</p>
+<p>いま，$A_1^2 = \rr_x \cdot \rr_x$, $A_2^2 = \rr_y \cdot \rr_y$とおき，これらをLam$\text{\'{e}}$パラメータと呼ぶ．
+$\X$, $\Y$ を単位接ベクトルとすれば，関係式</p>
+\[
+\rr_x = A_1 \X, \quad \rr_y = A_2 \Y,
+\]
+<p>が成り立つ．両立条件 $\rr_{xy} = \rr_{yx}$ より，</p>
+\[
+\tag{1}
+\X_y = q \Y, \quad \Y_x = p \X, \quad (A_1)_y = p A_2, \quad (A_2)_x = q A_1,
+\]
+<p>が得られる．ここで $p, q$ は第3, 4式で定義される．</p>
+
+<p>計算メモ：いま，$\X \cdot \X = 0$より$\X_y \cdot \X = 0$．同様にして$\Y_x \cdot \Y = 0$．</p>
+\[
+\rr_{xy} = (A_1)_y \X + A_1 \X_y, \quad
+\rr_{yx} = (A_2)_x \Y + A_2 \Y_x.
+\]
+<p>より，$\rr_{xy} \cdot \bN = 0$から$\X_y \cdot \bN = \Y_x \cdot \bN = 0$．ゆえに$\X_y = q \Y$, $\Y_x = p \X$ と表される．</p>
+<p>両立条件 $\rr_{xy} = \rr_{yx}$ より $(A_1)_y = p A_2$, $(A_2)_x = q A_1$を得る．</p>
+
+</section>
+
+<section>
+<h2>Combescure変換</h2>
+
+(1)の第3, 4式の別の解，すなわち
+\[
+(\overline{A}_1)_y = p \overline{A}_2, \quad
+(\overline{A}_2)_x = q \overline{A}_1,
+\]
+の解 $\overline{A}_1, \overline{A}_2$ が得られたとする．
+このとき
+\[
+\overline{\rr}_x = \overline{A}_1 \X, \quad
+\overline{\rr}_y = \overline{A}_2 \Y,
+\]
+により別の曲面 $\overline{\rr}$ が定まり，$\overline{\rr}$ を曲面 $\rr$ の<b>Combescure変換</b>と呼ぶ．
+Combescure変換により共役網という性質は保たれることに注意．
+</section>
+
+<section>
+<h2>曲率線座標・Weingartenの公式</h2>
+
+以下では座標 $(x, y)$ は曲率線座標，すなわち第一・第二基本形式が対角化されているとする：
+\[
+I = A_1^2 dx^2 + A_2^2 dy^2, \quad
+II = \kappa_1 A_1^2 dx^2 + \kappa_2 A_2^2 dy^2.
+\]
+ここで，$\kappa_1$, $\kappa_2$ は主曲率である．
+言い換えると，接ベクトルが直交する共役網である．
+Combescure変換は曲率線座標も保存することに注意せよ．
+
+いま，それぞれの座標線に沿った微小線素を $ds_1 = A_1 dx$, $ds_2 = A_2 dy$ と表すと，これら微小線素を円弧とする円
+点 $(x, y)$ を固定するとき，
+\[
+\frac{\bN(x + \Delta x, y) - \bN (x, y)}{\Delta x} =
+\]
+
+以上によりWeingartenの公式と呼ばれる次の関係式が成り立つ：
+\[
+\bN_x = H_\circ \X, \quad
+\bN_y = K_\circ \Y, \quad
+H_\circ = - \kappa_1 A_1, \quad
+K_\circ = - \kappa_2 A_2.
+\]
+いまWeingartenの公式に対する両立条件は
+\[
+(H_\circ)_y = p K_\circ, \quad
+(K_\circ)_x = q H_\circ,
+\]
+と表される．
+この両立条件をMainardi-Codazzi方程式と呼ぶ．
+また定義より，$\bN$は$\rr$のCombescure変換となっていることに注意せよ．
+</section>
+
+<section>
+<h2>Gauss-Weingartenの公式・Gauss-Mainardi-Codazzi方程式</h2>
+
+正規直交枠 $\Phi = (\X, \Y, \bN)$ を用いて，Gauss-Weingartenの公式は線型方程式系
+\[
+\Phi_x = \Phi
+\begin{pmatrix}
+0 & p & H_\circ \\
+- p & 0 & 0 \\
+- H_\circ & 0 & 0
+\end{pmatrix}, \quad
+\Phi_y = \Phi
+\begin{pmatrix}
+0 & q & 0 \\
+- q & 0 & K_\circ \\
+0 & - K_\circ & 0
+\end{pmatrix}.
+\]
+で表される．
+Gauss-Weingartenの公式に対する両立条件 $\Phi_{xy} = \Phi_{yx}$ はGauss方程式
+\[
+p_y + q_x + H_\circ K_\circ = 0,
+\]
+およびMainardi-Codazzi方程式
+\[
+(H_\circ)_y = p K_\circ, \quad
+(K_\circ)_x = q H_\circ,
+\]
+である．
+特にGauss曲率を$\mathcal{K} = \kappa_1 \kappa_2$で定めると，Gauss方程式から
+\[
+\mathcal{K} = - \frac{1}{A_1 A_2} \left( \left( \frac{(A_1)_y}{A_2} \right)_y + \left( \frac{(A_2)_x}{A_1} \right)_x \right),
+\]
+が成り立つ．
+すなわちGauss曲率は第一基本形式の係数のみから定まる (Gaussの驚異の定理)．
+</section>
+<!--/container-->
+
+</body>
+</html>
