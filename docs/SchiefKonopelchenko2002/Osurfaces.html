@@ -26,15 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
 \[
   \gdef\d{\partial}
   \gdef\bR{\boldsymbol{r}}
-  \gdef\H{\mathcal{H}}
+  \gdef\cH{\mathcal{H}}
   \gdef\uH{\underline{H}}
-  \gdef\K{\mathcal{K}}
+  \gdef\cK{\mathcal{K}}
   \gdef\uK{\underline{K}}
   \gdef\bN{\boldsymbol{N}}
   \gdef\bR{\boldsymbol{R}}
   \gdef\ubR{\underline{\boldsymbol{R}}}
-  \gdef\X{\boldsymbol{X}}
-  \gdef\Y{\boldsymbol{Y}}
+  \gdef\bX{\boldsymbol{X}}
+  \gdef\bY{\boldsymbol{Y}}
 \]
 </head>
 
@@ -79,13 +79,13 @@ a = (\ln H)_y = \frac{H_y}{H}, \quad b = (\ln K)_x = \frac{K_x}{K}.
 さらにこれらのポテンシャル $H, K$ を用いて，接ベクトル $\bR_x$, $\bR_y$ を次のように分解する：
 \[
 \tag{1.3}
-\bR_x = \X H, \quad \bR_y = \Y K.
+\bR_x = \bX H, \quad \bR_y = \bY K.
 \]
-この段階では $\X$, $\Y$ が単位接ベクトルであることなどは要請しないものとする．
+この段階では $\bX$, $\bY$ が単位接ベクトルであることなどは要請しないものとする．
 このとき，2階の双曲型方程式 (1) は以下の1階線型方程式系へ還元される：
 \[
 \tag{1.4}
-\X_y = p \Y, \quad \Y_x = q \X.
+\bX_y = p \bY, \quad \bY_x = q \bX.
 \]
 ここで $p$, $q$ は次式で定義される：
 \[
@@ -93,12 +93,12 @@ a = (\ln H)_y = \frac{H_y}{H}, \quad b = (\ln K)_x = \frac{K_x}{K}.
 H_y = p K, \quad K_x = q H.
 \]
 式 (1.5) は線型方程式系 (1.4) の随伴 (adjoint) とみなすことができる．
-逆に，与えられたベクトルとスカラーの組 $(\X, \Y, H, K)$ および函数 $p, q$ が，関係式 (1.4), (1.5) によって関係づけられているとき，線型方程式系 (3) は両立条件 $\bR_{xy} = \bR_{yx}$ を満たし，曲面 $\Sigma \subset \R^3$ が得られる．
+逆に，与えられたベクトルとスカラーの組 $(\bX, \bY, H, K)$ および函数 $p, q$ が，関係式 (1.4), (1.5) によって関係づけられているとき，線型方程式系 (3) は両立条件 $\bR_{xy} = \bR_{yx}$ を満たし，曲面 $\Sigma \subset \R^3$ が得られる．
 
 いま (1.5) の別の解 $(H_*, K_*)$ が得られたとするとき，線型方程式系
 \[
 \tag{1.6}
-(\bR_*)_x = H_* \X, \quad (\bR_*)_y = K_* \Y,
+(\bR_*)_x = H_* \bX, \quad (\bR_*)_y = K_* \bY,
 \]
 は両立条件 $(\bR_*)_{xy} = (\bR_*)_{yx}$ を満たし，別の曲面 $\Sigma_* \subset \R^3$ が定まる．
 曲面 $\Sigma_*$ を $\Sigma$ の <b>Combescure変換 (Combescure transformation)</b> と呼ぶ．
@@ -114,25 +114,25 @@ E. Combescure, <a href="http://www.numdam.org/item/10.24033/asens.36.pdf" target
 <section>
 <h2>直交共役座標 (曲率線座標)</h2>
 
-以下では $\X$, $\Y$ はいずれも単位ベクトルとし，互いに直交するものと仮定する：
+以下では $\bX$, $\bY$ はいずれも単位ベクトルとし，互いに直交するものと仮定する：
 \[
 \tag{7}
-\X \cdot \X = 1, \quad
-\Y \cdot \Y = 1, \quad
-\X \cdot \Y = 0.
+\bX \cdot \bX = 1, \quad
+\bY \cdot \bY = 1, \quad
+\bX \cdot \bY = 0.
 \]
 このとき座標 $(x, y)$ を直交共役座標または曲率線座標と呼ぶ．
 
-曲面の単位法ベクトルを $\bN = \X \times \Y$ で表す．
+曲面の単位法ベクトルを $\bN = \bX \times \bY$ で表す．
 このとき (4) より
 \[
 \tag{8}
-\bN_x \cdot \Y = 0, \quad \bN_y \cdot \X = 0,
+\bN_x \cdot \bY = 0, \quad \bN_y \cdot \bX = 0,
 \]
 となるので，
 \[
 \tag{9}
-\bN_x = \X H_\circ, \quad \bN_y = \Y K_\circ,
+\bN_x = \bX H_\circ, \quad \bN_y = \bY K_\circ,
 \]
 となる $H_\circ$, $K_\circ$ が存在する．
 いま，関係式
@@ -145,8 +145,8 @@ K_\circ = - \kappa_2 K,
 このとき式 (9) は
 \[
 \tag{11}
-\bN_x = - \kappa_1 H \X = - \kappa_1 \bR_x, \quad
-\bN_y = - \kappa_2 K \Y = - \kappa_2 \bR_y,
+\bN_x = - \kappa_1 H \bX = - \kappa_1 \bR_x, \quad
+\bN_y = - \kappa_2 K \bY = - \kappa_2 \bR_y,
 \]
 と表される．
 この式をWeingartenの公式と呼ぶ．
@@ -161,8 +161,8 @@ Combescure変換は，曲率線座標も保つことに注意．
 <!--
 さらに $\bN_*$ を $\bN$ のCombescure変換で単位球面上にあるものとすると
 \[
-(\bN_* - \bN)_x = ((H_\circ)_* - H_\circ) \X, \quad
-(\bN_* - \bN)_y = ((K_\circ)_* - K_\circ) \Y,
+(\bN_* - \bN)_x = ((H_\circ)_* - H_\circ) \bX, \quad
+(\bN_* - \bN)_y = ((K_\circ)_* - K_\circ) \bY,
 \]
 -->
 </section>
@@ -170,24 +170,24 @@ Combescure変換は，曲率線座標も保つことに注意．
 <section>
 <h2>O曲面の定義</h2>
 
-いま，次の条件を満たすベクトル$(\X, \Y)$, $\uH = (H_1, \ldots, H_n)$, $\uK = (K_1, \ldots, K_n)$ および函数 $p, q$ を考える：
+いま，次の条件を満たすベクトル$(\bX, \bY)$, $\uH = (H_1, \ldots, H_n)$, $\uK = (K_1, \ldots, K_n)$ および函数 $p, q$ を考える：
 \[
 \tag{2.1}
-\X_y = q \Y, \quad \Y_x = p \X, \quad \uH_y = p \uK, \quad \uK_x = q \uH.
+\bX_y = q \bY, \quad \bY_x = p \bX, \quad \uH_y = p \uK, \quad \uK_x = q \uH.
 \]
 
 すると，互いにCombescure変換の関係にある $(\bR_1, \ldots, \bR_n)$ によってパラメトライズされた曲面 $\Sigma_1, \ldots, \Sigma_n$ が得られる：
 \[
 \tag{2.2}
-(\bR_j)_x = \X H_j, \quad (\bR_j)_y = \Y K_j, \quad j = 1, \ldots, n.
+(\bR_j)_x = \bX H_j, \quad (\bR_j)_y = \bY K_j, \quad j = 1, \ldots, n.
 \]
 このとき $(3 \times n)$ 行列 $\ubR = (\bR_1, \ldots, \bR_n)$ を導入すると，(2.2) は
 \[
 \tag{2.3}
-\ubR_x = \X \uH, \quad \ubR_y = \Y \uK,
+\ubR_x = \bX \uH, \quad \ubR_y = \bY \uK,
 \]
 と表される．
-いま $\X$, $\Y$ は $\ubR$ の列ベクトルからなる $\R^3$ 内の曲面 $\Sigma_1, \ldots, \Sigma_n$ の接ベクトルであり，座標線の直交条件は $\X \cdot \Y = 0$ と表される．
+いま $\bX$, $\bY$ は $\ubR$ の列ベクトルからなる $\R^3$ 内の曲面 $\Sigma_1, \ldots, \Sigma_n$ の接ベクトルであり，座標線の直交条件は $\bX \cdot \bY = 0$ と表される．
 一方で式 (2.3) は，$(3 \times n)$行列 $\ubR$ の行ベクトル $\bR^1$, $\bR^2$, $\bR^3$ を $\R^n$ 内の曲面 $\Sigma^1$, $\Sigma^2$, $\Sigma^3$ とみなすことにより，$\uH, \uK \in \R^n$ を接ベクトルとみなすことができる：
 \[
 \ubR = (\bR_1, \ldots, \bR_n)
@@ -205,8 +205,8 @@ $\R^n$ 上に擬内積を定める対称行列を $S = (S^{ij})$ と表す：
 \]
 曲面 $\Sigma_k$ 上の座標曲線に沿った変数変換
 \[
-(\d_x, \X, q) \to f(x) (\d_x, \X, q), \quad
-(\d_y, \Y, p) \to g(y) (\d_y, \Y, p),
+(\d_x, \bX, q) \to f(x) (\d_x, \bX, q), \quad
+(\d_y, \bY, p) \to g(y) (\d_y, \bY, p),
 \]
 によって，双対曲面 $\Sigma^k$ 上の接ベクトル $\uH$, $\uK$ が保たれる．
 一方で，双対曲面 $\Sigma^k$ 上の座標曲線に沿った変数変換
@@ -214,7 +214,7 @@ $\R^n$ 上に擬内積を定める対称行列を $S = (S^{ij})$ と表す：
 (\d_x, \uH, q) \to \tilde{f}(x) (\d_x, \uH, q), \quad
 (\d_y, \uK, p) \to \tilde{g}(y) (\d_y, \uK, p),
 \]
-によって，曲面 $\Sigma_l$ 上の接ベクトル $\X$, $\Y$ が保たれることに注意．<br>
+によって，曲面 $\Sigma_l$ 上の接ベクトル $\bX$, $\bY$ が保たれることに注意．<br>
 
 このような双対共役網 (dual conjugate nets) の概念は，
 <ol>
@@ -272,17 +272,17 @@ $\R^n$ 上に擬内積を定める対称行列を $S = (S^{ij})$ と表す：
 \kappa_1 = - \frac{H_\circ}{H}, \quad
 \kappa_2 = - \frac{K_\circ}{K}.
 \]
-と表されるので，Gauss曲率 $\K$，平均曲率 $\H$ は以下のように表される：
+と表されるので，Gauss曲率 $\cK$，平均曲率 $\cH$ は以下のように表される：
 \[
-\K = \kappa_1 \kappa_2 = \frac{H_\circ K_\circ}{HK}, \quad
-\H = \frac{1}{2} (\kappa_1 + \kappa_2) 
+\cK = \kappa_1 \kappa_2 = \frac{H_\circ K_\circ}{HK}, \quad
+\cH = \frac{1}{2} (\kappa_1 + \kappa_2) 
 = - \frac{1}{2} \left( \frac{H_\circ}{H} + \frac{K_\circ}{K} \right).
 \]
 
 まずは最もシンプルな場合を考えよう．1組のCombescure-related surfaces $\bR_1$, $\bR_2$ を考える：
 \[
-(\bR_i)_x = \X H_i, \quad
-(\bR_i)_y = \Y K_i, \quad i=1,2.
+(\bR_i)_x = \bX H_i, \quad
+(\bR_i)_y = \bY K_i, \quad i=1,2.
 \]
 このとき双対空間は $\R^2$ であり，$\R^2$ に行列
 \[
@@ -302,14 +302,14 @@ x \cdot y = x_1 y_1 + x_2 y_2,
 H_1 K_1 + H_2 K_2 = 0,
 \]
 と表される．
-$\bR_1$, $\bR_2$ のGauss曲率 $\K_1$, $\K_2$ はそれぞれ
+$\bR_1$, $\bR_2$ のGauss曲率 $\cK_1$, $\cK_2$ はそれぞれ
 \[
-\K_1 = \frac{H_\circ K_\circ}{H_1 K_1}, \quad
-\K_2 = \frac{H_\circ K_\circ}{H_2 K_2},
+\cK_1 = \frac{H_\circ K_\circ}{H_1 K_1}, \quad
+\cK_2 = \frac{H_\circ K_\circ}{H_2 K_2},
 \]
 と表されるので，直交条件より
 \[
-\K_1 = - \K_2
+\cK_1 = - \cK_2
 \]
 が得られる．
 一方，$\R^2$ に行列
@@ -330,11 +330,11 @@ H_1 K_1 - H_2 K_2 = 0,
 \]
 で与えられ，$\bR_1$, $\bR_2$ のGauss曲率は
 \[
-\K_1 = \K_2,
+\cK_1 = \cK_2,
 \]
 となる．
 したがってCombescure変換の組 $\bR_1$, $\bR_2$ は，対応する点においてGauss曲率の絶対値が等しければ，O曲面をなすことがわかる．
-特に $\bR_2$ の値域が単位球面 $S^2$ であれば，$\K_2 = 1$ であり，$\bR_1$ はGauss曲率一定曲面である．<br>
+特に $\bR_2$ の値域が単位球面 $S^2$ であれば，$\cK_2 = 1$ であり，$\bR_1$ はGauss曲率一定曲面である．<br>
 
 Gauss曲率が正で一定の曲面は平均曲率一定曲面の平行曲面として表すことができ，Gauss方程式は (座標 $(x, y)$ が双等温座標という条件の下) 楕円型sinh-Godon方程式である：
 \[
@@ -388,12 +388,12 @@ H_1 = K_1, \quad H_2 = - K_2,
 \]
 ととると，<b>Christoffel変換</b>が次式で表される．
 \[
-(\bR_2)_x = \X H_2 = \frac{\X}{H_1} = \frac{(\bR_1)_x}{H_1^2}, \quad
-(\bR_2)_y = \Y K_2 = - \frac{\Y}{K_1} = - \frac{(\bR_1)_y}{H_1^2}.
+(\bR_2)_x = \bX H_2 = \frac{\bX}{H_1} = \frac{(\bR_1)_x}{H_1^2}, \quad
+(\bR_2)_y = \bY K_2 = - \frac{\bY}{K_1} = - \frac{(\bR_1)_y}{H_1^2}.
 \]
 特に $\bR_2$ が $\bR_1$ のGauss写像 $\bN$ であるとき，すなわち $H_2 = H_\circ$, $K_2 = K_\circ$ であるとき，
 \[
-\H_1 
+\cH_1 
 = - \frac{1}{2} \left( \frac{H_\circ}{H_1} + \frac{K_\circ}{K_1} \right)
 = - \frac{1}{2} \left( \frac{H_2}{H_1} + \frac{K_2}{K_1} \right)
 = - \frac{H_2 K_1 + H_1 K_2}{2 H_1 K_1}
@@ -505,23 +505,23 @@ K_2
 = 0
 \]
 となるので $\bR_+$, $\bR_-$ はO曲面である．
-特に $\bR_+$, $\bR_-$ のGauss曲率 $\K_+$, $\K_-$ は等しいことがわかり，具体的には
+特に $\bR_+$, $\bR_-$ のGauss曲率 $\cK_+$, $\cK_-$ は等しいことがわかり，具体的には
 \[
-\K_\pm = \frac{H_\circ K_\circ}{H_\pm K_\pm} = \frac{4 H_\circ K_\circ}{H_1 K_1 + H_2 K_2},
+\cK_\pm = \frac{H_\circ K_\circ}{H_\pm K_\pm} = \frac{4 H_\circ K_\circ}{H_1 K_1 + H_2 K_2},
 \]
 となる．
 いま曲面 $\Sigma_-$ が $\bR_1$, $\bR_2$ のGauss写像である状況を考えよう：
 \[
 \bR_- = \bN, \quad H_- = H_\circ, \quad K_- = K_\circ.
 \]
-このとき $\K_\pm = 1$ であり，
+このとき $\cK_\pm = 1$ であり，
 \[
 \begin{aligned}
-&\H_1 
+&\cH_1 
 = - \frac{1}{2} \left( \frac{H_\circ}{H_1} + \frac{K_\circ}{K_1} \right)
 = - \frac{1}{4} \left( \frac{H_2}{H_1} - 1 + \frac{K_2}{K_1} - 1 \right)
 = \frac{1}{2}, \cr
-&\H_2 
+&\cH_2 
 = - \frac{1}{2} \left( \frac{H_\circ}{H_2} + \frac{K_\circ}{K_2} \right)
 = - \frac{1}{4} \left( 1 - \frac{H_1}{H_2} + 1- \frac{K_1}{K_2} \right)
 = - \frac{1}{2}.
@@ -549,11 +549,11 @@ K_2
 
 $\alpha$, $\beta$, $\gamma$ を定数として，関係式
 \[
-\alpha \K + 2 \beta \H = \gamma,
+\alpha \cK + 2 \beta \cH = \gamma,
 \]
 を満たす曲面を<b>線型Weingarten曲面 (linear Weingarten surface)</b>と呼ぶ．
 \[
-\alpha \K + 2 \beta \H = \gamma
+\alpha \cK + 2 \beta \cH = \gamma
 \iff \alpha \frac{H_\circ K_\circ}{H K} - \beta \left( \frac{H_\circ}{H} + \frac{K_\circ}{K} \right) = \gamma
 \iff \gamma HK + \beta (H_\circ K + H K_\circ) -\alpha H_\circ K_\circ = 0,
 \]
@@ -561,7 +561,7 @@ $\alpha$, $\beta$, $\gamma$ を定数として，関係式
 \[
 \uH S \uK^T = 0, \quad
 \uH = (H, H_\circ), \quad
-\uK = (K, \K_\circ), \quad
+\uK = (K, \cK_\circ), \quad
 S =
 \begin{pmatrix}
 \gamma & \beta \cr
@@ -637,13 +637,13 @@ A. Petot, <a href="https://gallica.bnf.fr/ark:/12148/bpt6k3068q/f1426.item", tar
 
 Petot O曲面は，双対空間を $\R^3$ と同一視することで得られる：
 \[
-\uH = \X^T, \quad \uK = \Y^T, \quad p = q.
+\uH = \bX^T, \quad \uK = \bY^T, \quad p = q.
 \]
 したがって，O曲面 $\Sigma_1$, $\Sigma_2$, $\Sigma_3$ はCombescure-relatedな3つのPetot曲面の組である．
 また定義より，"位置ベクトル"を表す行列 $\ubR$ は
 \[
-\ubR_x = \X \uH = \X \X^T = \uH^T \uH, \quad
-\ubR_y = \Y \uK = \Y \Y^T = \uK^T \uK,
+\ubR_x = \bX \uH = \bX \bX^T = \uH^T \uH, \quad
+\ubR_y = \bY \uK = \bY \bY^T = \uK^T \uK,
 \]
 を満たす．
 $p = q$ より，曲面 $\Sigma_i$ の第一基本形式 $I_i = H_i^2 \, dx^2 + K_i^2 \, dy^2$ の係数について
