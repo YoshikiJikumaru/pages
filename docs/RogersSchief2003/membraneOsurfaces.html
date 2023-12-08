@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function() {
 \[
   \gdef\d{\partial}
   \gdef\bR{\boldsymbol{r}}
-  \gdef\H{\mathcal{H}}
+  \gdef\cH{\mathcal{H}}
   \gdef\bH{\boldsymbol{H}}
   \gdef\oH{\overline{H}}
   \gdef\uH{\underline{H}}
-  \gdef\K{\mathcal{K}}
+  \gdef\cK{\mathcal{K}}
   \gdef\bK{\boldsymbol{K}}
   \gdef\oK{\overline{K}}
   \gdef\uK{\underline{K}}
@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
   \gdef\bR{\boldsymbol{R}}
   \gdef\obR{\overline{\boldsymbol{R}}}
   \gdef\ubR{\underline{\boldsymbol{R}}}
-  \gdef\X{\boldsymbol{X}}
-  \gdef\Y{\boldsymbol{Y}}
+  \gdef\bX{\boldsymbol{X}}
+  \gdef\bY{\boldsymbol{Y}}
 \]
 </head>
 
@@ -82,13 +82,13 @@ a = (\ln H)_y = \frac{H_y}{H}, \quad b = (\ln K)_x = \frac{K_x}{K}.
 さらにこれらのポテンシャル $H, K$ を用いて，接ベクトル $\bR_x$, $\bR_y$ を次のように分解する：
 \[
 \tag{1.3}
-\bR_x = \X H, \quad \bR_y = \Y K.
+\bR_x = \bX H, \quad \bR_y = \bY K.
 \]
-この段階では $\X$, $\Y$ が単位接ベクトルであることなどは要請しないものとする．
+この段階では $\bX$, $\bY$ が単位接ベクトルであることなどは要請しないものとする．
 このとき，2階の双曲型方程式 (1) は以下の1階線型方程式系へ還元される：
 \[
 \tag{1.4}
-\X_y = p \Y, \quad \Y_x = q \X.
+\bX_y = p \bY, \quad \bY_x = q \bX.
 \]
 ここで $p$, $q$ は次式で定義される：
 \[
@@ -96,12 +96,12 @@ a = (\ln H)_y = \frac{H_y}{H}, \quad b = (\ln K)_x = \frac{K_x}{K}.
 H_y = p K, \quad K_x = q H.
 \]
 式 (1.5) は線型方程式系 (1.4) の随伴 (adjoint) とみなすことができる．
-逆に，与えられたベクトルとスカラーの組 $(\X, \Y, H, K)$ および函数 $p, q$ が，関係式 (1.4), (1.5) によって関係づけられているとき，線型方程式系 (3) は両立条件 $\bR_{xy} = \bR_{yx}$ を満たし，曲面 $\Sigma \subset \R^3$ が得られる．
+逆に，与えられたベクトルとスカラーの組 $(\bX, \bY, H, K)$ および函数 $p, q$ が，関係式 (1.4), (1.5) によって関係づけられているとき，線型方程式系 (3) は両立条件 $\bR_{xy} = \bR_{yx}$ を満たし，曲面 $\Sigma \subset \R^3$ が得られる．
 
 いま (1.5) の別の解 $(H_*, K_*)$ が得られたとするとき，線型方程式系
 \[
 \tag{1.6}
-(\bR_*)_x = H_* \X, \quad (\bR_*)_y = K_* \Y,
+(\bR_*)_x = H_* \bX, \quad (\bR_*)_y = K_* \bY,
 \]
 は両立条件 $(\bR_*)_{xy} = (\bR_*)_{yx}$ を満たし，別の曲面 $\Sigma_* \subset \R^3$ が定まる．
 曲面 $\Sigma_*$ を $\Sigma$ の <b>Combescure変換 (Combescure transformation)</b> と呼ぶ．
@@ -117,39 +117,39 @@ E. Combescure, <a href="http://www.numdam.org/item/10.24033/asens.36.pdf" target
 <section>
 <h2>直交共役座標 (曲率線座標)</h2>
 
-以下では $\X$, $\Y$ はいずれも単位ベクトルとし，互いに直交するものと仮定する：
+以下では $\bX$, $\bY$ はいずれも単位ベクトルとし，互いに直交するものと仮定する：
 \[
 \tag{7}
-\X \cdot \X = 1, \quad
-\Y \cdot \Y = 1, \quad
-\X \cdot \Y = 0.
+\bX \cdot \bX = 1, \quad
+\bY \cdot \bY = 1, \quad
+\bX \cdot \bY = 0.
 \]
 このとき座標 $(x, y)$ を直交共役座標または曲率線座標と呼ぶ．
   
-曲面の単位法ベクトルを $\bN = \X \times \Y$ で表す．
+曲面の単位法ベクトルを $\bN = \bX \times \bY$ で表す．
 このとき (4) より
 \[
 \tag{8}
-\bN_x \cdot \Y = 0, \quad \bN_y \cdot \X = 0,
+\bN_x \cdot \bY = 0, \quad \bN_y \cdot \bX = 0,
 \]
 となるので，
 \[
 \tag{9}
-\bN_x = \X H_\circ, \quad \bN_y = \Y K_\circ,
+\bN_x = \bX H_\circ, \quad \bN_y = \bY K_\circ,
 \]
 となる $H_\circ$, $K_\circ$ が存在する．
 いま，関係式
 \[
 \tag{10}
-- \bN_x \cdot \X = - \frac{H_\circ}{H} = \kappa_1, \quad
-- \bN_y \cdot \Y = - \frac{K_\circ}{K} = \kappa_2,
+- \bN_x \cdot \bX = - \frac{H_\circ}{H} = \kappa_1, \quad
+- \bN_y \cdot \bY = - \frac{K_\circ}{K} = \kappa_2,
 \]
 により定義される $\kappa_1$, $\kappa_2$ を主曲率と呼ぶ．
 定義より $H_\circ = - \kappa_1 H$, $K_\circ = - \kappa_2 K$ であり，このとき式 (9) は
 \[
 \tag{11}
-\bN_x = - \kappa_1 H \X = - \kappa_1 \bR_x, \quad
-\bN_y = - \kappa_2 K \Y = - \kappa_2 \bR_y,
+\bN_x = - \kappa_1 H \bX = - \kappa_1 \bR_x, \quad
+\bN_y = - \kappa_2 K \bY = - \kappa_2 \bR_y,
 \]
 と表される．
 この式をWeingartenの公式と呼ぶ．
@@ -164,7 +164,7 @@ Combescure変換は，曲率線座標も保つことに注意．
 
 <section>
 <h2>曲率線座標におけるGauss-Weingartenの公式，Gauss-Mainardi-Codazzi方程式</h2>
-正規直交枠 $\Phi = (\X, \Y, \bN)$ を用いて，Gauss-Weingartenの公式は線型方程式系
+正規直交枠 $\Phi = (\bX, \bY, \bN)$ を用いて，Gauss-Weingartenの公式は線型方程式系
 \[
 \Phi_x = \Phi
 \begin{pmatrix}
@@ -230,7 +230,7 @@ p_y + q_x + H_\circ K_\circ = 0,
 を得る．
 したがって定義より，
 \[
-\obR_x = \oH \X, \quad \obR_y = \oK \Y,
+\obR_x = \oH \bX, \quad \obR_y = \oK \bY,
 \]
 なるCombescure変換 $\obR$ が存在する．<br>
 
@@ -240,5 +240,834 @@ p_y + q_x + H_\circ K_\circ = 0,
 = - H_\circ \oK - K_\circ \oH + q_n HK
 \]
 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%The membrane shell system
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{The membrane shell system}
+\label{sec:2}
+
+以下では，Novozhilov~\cite{Novozhilov1964}によって示された古典的なシェルの膜理論における標準的な仮定に従うものとする．
+したがって膜の幾何学的性質は，3次元Euclid空間$\R^3$に埋め込まれた曲面$\Sigma$の古典的な微分幾何の設定で解析できる．
+(膜) 曲面$\Sigma: \br = \br(\a, \b)$とその単位法線ベクトル場$\bN$は曲率線座標$\a$, $\b$によってパラメータづけられているものとする．
+このとき第一基本形式 \ajRoman{1}$= d\br^2$，第二基本形式 \ajRoman{2}$= - d\bN \cdot d\br$は以下のように与えられる：
+\begin{equation}
+\label{eq:2.1}
+\textrm{\ajRoman{1}} = A_1^2 \, d\a^2 + A_2^2 \, d\b^2, \quad
+\textrm{\ajRoman{2}} = \kappa_1 A_1^2 \, d\a^2 + \kappa_2 A_2^2 \, d\b^2.
+\end{equation}
+ここで$\kappa_1 = 1/R_1$, $\kappa_2 = 1/R_2$は主曲率，$R_1$, $R_2$は対応する主曲率半径を表す．
+この座標において，Gauss-Mainardi-Codazzi方程式は以下の形をとる：
+\begin{subequations}
+\label{eq:2.2}
+\begin{align}
+\left( \frac{(A_2)_\a}{A_1} \right)_\a + \left( \frac{(A_1)_\b}{A_2} \right)_\b + \kappa_1 \kappa_2 A_1 A_2 &=0, \label{eq:2.2a}\\
+(\kappa_1)_\beta + (\ln A_1)_\beta (\kappa_1 - \kappa_2) &=0, \label{eq:2.2b}\\
+(\kappa_2)_\alpha + (\ln A_2)_\alpha (\kappa_2 - \kappa_1) &=0. \label{eq:2.2c}
+\end{align}
+\end{subequations}
+また古典的な膜の釣り合い式は以下のように表される：
+\begin{align}
+\begin{aligned}
+\label{eq:2.3}
+(N_1 A_2)_\alpha + \frac{(A_1^2 S)_\b}{A_1} - N_2 (A_2)_\a + A_1 A_2 p_1 &=0, \\
+(N_2 A_1)_\beta + \frac{(A_2^2 S)_\a}{A_2} - N_1 (A_1)_\b + A_1 A_2 p_2 &=0, \\
+\frac{N_1}{R_1} + \frac{N_2}{R_2} + p_3 &=0.
+\end{aligned}
+\end{align}
+ここで$N_1$, $N_2$は面内垂直応力成分，$S = N_{12} = N_{21}$は面内せん断を表す\footnote{注：以降の論文では$(N_1, N_2, N_{12}) \to (T_1, T_2, T_{12})$, $p_3 \to q_n, Z$などと読み替える必要あり．}．
+さらに函数$p_i$は曲面に作用する荷重の成分を表す：
+\begin{equation}
+\label{eq:2.4}
+p = p_1 e_1 + p_2 e_2 + p_3 e_3.
+\end{equation}
+また正規直交枠$(e_1, e_2, e_3)$は以下のように定義されるものである：
+\begin{equation}
+\label{eq:2.5}
+e_1 = \frac{\br_\a}{A_1}, \quad
+e_2 = \frac{\br_\b}{A_2}, \quad
+e_3 = N = \frac{\br_\a \times \br_\b}{A_1 A_2}.
+\end{equation}
+方程式系\eqref{eq:2.3}は薄肉シェルの一般論から直接導出される~\cite{Novozhilov1964}．
+
+膜の形状および所定の外力が与えられたとき，膜の釣り合い式は面内応力に対するwell-determinedな線型系をなす．
+ところが，（物理的な）条件が面内応力に課されるとき，釣り合い式はGauss-Mainardi-Codazzi方程式に制約を課し，すなわち膜の幾何学的形状にも制約を与える．
+実際，法線方向の荷重のみが作用し，面内せん断がゼロのとき ($S = 0$)，釣り合い式~\eqref{eq:2.3}は以下の形に単純化される：
+\begin{subequations}
+\label{eq:2.6}
+\begin{align}
+(N_1)_\alpha + (\ln A_2)_\a (N_1 - N_2) &=0, \label{eq:2.6a} \\
+(N_2)_\beta + (\ln A_1)_\b (N_2 - N_1) &=0, \label{eq:2.6b} \\
+\kappa_1 N_1 + \kappa_2 N_2 + p_3 &=0. \label{eq:2.6c}
+\end{align}
+\end{subequations}
+これらの釣り合い式，およびGauss-Mainardi-Codazzi方程式\eqref{eq:2.2}はwell-determinedな非線型系をなす．
+したがって，上述の状況の下で，釣り合い状態の膜の形状は制限される．
+本論文で扱うのは，このような膜の幾何学的形状である．
+$S=0$という条件は，膜の主応力線が主曲率線と一致するという条件を表していることに注意されたい．
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%Specializations
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Specializations}
+\label{sec:3}
+
+最も簡単な「等張力」の応力分布，すなわち
+\begin{equation}
+\label{eq:3.1}
+N_1 = N_2 = c = {\rm const.},
+\end{equation}
+のとき，釣り合い式\eqref{eq:2.6}は古典的なYoung-Laplace方程式~\cite{Young1805,Laplace1806}に帰着される：
+\begin{equation}
+\kappa_1 + \kappa_2 = - \frac{p_3}{c}.
+\end{equation}
+これは，法線方向の荷重$p_3$が膜の平均曲率\footnote{Schief先生は平均曲率は$2$で割らない方がお好みのようで…}
+\begin{equation}
+\label{eq:3.3}
+\H = \kappa_1 + \kappa_2,
+\end{equation}
+に比例することを示している．
+特に
+\begin{equation}
+\label{eq:3.4}
+p_3 = {\rm const.},
+\end{equation}
+であれば，膜は平均曲率一定であり，$p_3 = 0$のとき膜は極小曲面である．
+このような古典的な平均曲率一定曲面および極小曲面とのつながりは，$p_3 = {\rm const.}$の場合を詳細に解析せよ，ということを示唆している．
+したがって，以下では面内せん断がゼロであり，法線方向に一定の荷重が作用する場合に焦点を当てる．
+
+驚くべきことに，膜の法線方向に一定の荷重が作用し，面内せん断がゼロである場合の方程式系\eqref{eq:2.2}, \eqref{eq:2.6}, \eqref{eq:3.4}は，近年いわゆるO曲面~\cite{SK2003}の文脈において導出された，可積分系における非常に広範なクラスに包含されることがわかる．
+この可積分系とのつながりを示すために，まずは釣り合い式\eqref{eq:2.6a}, \eqref{eq:2.6b}がちょうどMainardi-Codazzi方程式\eqref{eq:2.2b}, \eqref{eq:2.2c}と同じ構造をもつ場合について考えよう．
+したがって上述のリダクション\eqref{eq:3.1}より一般に$(N_1, N_2) \sim (\kappa_2, \kappa_1)$も許容される\footnote{注：$A$と$B$が比例するとき$A \sim B$と表す．}．
+釣り合い式の線型性により，特殊化
+\begin{equation}
+\label{eq:3.5}
+N_1 = \lambda \kappa_2 + \mu, \quad
+N_2 = \lambda \kappa_1 + \mu,
+\end{equation}
+が許容される．
+ここで$\lambda$, $\mu$は任意定数である．
+釣り合い式\eqref{eq:2.6a}, \eqref{eq:2.6b}はこのとき単にMainardi-Codazzi方程式\eqref{eq:2.2b}, \eqref{eq:2.2c}によって自明に成り立ち，したがって余分なものとなるが，一方で法線方向の釣り合い\eqref{eq:2.6c}は純粋な幾何学的制約条件
+\begin{equation}
+\label{eq:3.6}
+2 \lambda \K + \mu \H + p_3 = 0, 
+\end{equation}
+を与える．
+ここで膜のGauss曲率$\K$は
+\begin{equation}
+\label{eq:3.7}
+\K = \kappa_1 \kappa_2,
+\end{equation}
+によって定義される．
+重要な点は，関係式\eqref{eq:3.6}により，Gauss曲率および平均曲率が線型関係にあることから，主曲率$\kappa_1$, $\kappa_2$も線型の関係にあるため，膜形状は線型Weingarten曲面\cite{Eisenhart1960}であることが示される\footnote{Lieの定理により，一般のWeingarten曲面の曲率線は求積法によって求まる．}．
+よく知られているように，線型Weingarten曲面は「solitonic」である，すなわち，これらの下部構造としてのGauss-Mainardi-Codazzi方程式は可積分系をなす．
+$\lambda = 0$のとき，上述の平均曲率一定曲面が復元され，$\mu = 0$のときはGauss曲率一定曲面が得られる．
+さらに，線型Weingarten曲面はGauss曲率一定曲面の平行曲面として得られることが知られている\footnote{平行曲面はcomputer-aided engineering designにおいて「オフセット曲面」の名前で重要である~\cite{Farouki1985,Farouki1986}．Weingarten曲面のこの分野での応用可能性はBrunt-Grant~\cite{BG1996}に議論されている．}．
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%The O surface connection
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{The O surface connection}
+\label{sec:4}
+
+制約条件\eqref{eq:3.5}における線型Weingarten曲面の出現は，釣り合い方程式\eqref{eq:2.6a}, \eqref{eq:2.6b}とMainardi-Codazzi \eqref{eq:2.2b}, \eqref{eq:2.2b} 方程式との類似性を利用することで得られた．
+この類似性は，一般的なケースにおいても重要である．
+これは，支配方程式を再定式化することによって直ちに理解することができる．
+変数変換
+\begin{equation}
+\label{eq:4.1}
+p = \frac{(A_1)_\b}{A_2}, \
+q = \frac{(A_2)_\a}{A_1}, \quad
+H_\circ = - \kappa_1 A_1, \
+K_\circ = - \kappa_2 A_2, \quad
+H = A_1, \
+K = A_2,
+\end{equation}
+により，Gauss-Mainardi-Codazzi方程式\eqref{eq:2.2}は以下の一階線型方程式系と等価である：
+\begin{subequations}
+\label{eq:4.2}
+\begin{align}
+p_\beta + q_\alpha + H_\circ K_\circ &= 0, \label{eq:4.2a}\\
+H_\beta &= p K, \label{eq:4.2b}\\
+(H_\circ)_\beta &= p K_\circ, \label{eq:4.2c}\\
+K_\alpha &= q H, \label{eq:4.2d} \\
+(K_\circ)_\alpha &= q H_\circ. \label{eq:4.2e}
+\end{align}
+\end{subequations}
+曲率線に沿った単位接ベクトル$e_1 = \bX$, $e_2 = \bY$および単位法ベクトル$e_3 = \bN$はこのとき，Gauss-Weingartenの公式
+\begin{align}
+\label{eq:4.3}
+\begin{aligned}
+\begin{pmatrix}
+\bX \\
+\bY \\
+\bN
+\end{pmatrix}_\alpha &=
+\begin{pmatrix}
+0 & -p & - H_\circ \\
+p & 0 & 0 \\
+H_\circ & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\bX \\
+\bY \\
+\bN
+\end{pmatrix}, \\
+\begin{pmatrix}
+\bX \\
+\bY \\
+\bN
+\end{pmatrix}_\beta &=
+\begin{pmatrix}
+0 & q & 0 \\
+-q & 0 & -K_\circ \\
+0 & K_\circ & 0
+\end{pmatrix}
+\begin{pmatrix}
+\bX \\
+\bY \\
+\bN
+\end{pmatrix},
+\end{aligned}
+\end{align}
+を解くことで得られ，膜の位置ベクトル$r$はペア
+\begin{equation}
+\label{eq:4.4}
+\br_\alpha = H \bX, \quad \br_\beta = K \bY,
+\end{equation}
+を積分することで得られる．
+ここで$\br_\circ = \bN$とおくとき，三つ組$(\br, H, K)$および$(\br_\circ, H_\circ, K_\circ)$は同じ線型方程式，すなわち前者に対しては\eqref{eq:4.2b}, \eqref{eq:4.2d}, \eqref{eq:4.4}，後者に対しては\eqref{eq:4.2c}, \eqref{eq:4.2e}および
+\begin{equation}
+\label{eq:4.5}
+(\br_\circ)_\alpha = H_\circ \bX, \quad
+(\br_\circ)_\beta = K_\circ \bY,
+\end{equation}
+を満たしている．
+さらに変数変換
+\begin{equation}
+\widetilde{H} = N_2 A_1, \quad
+\widetilde{K} = N_1 A_2,
+\end{equation}
+により，釣り合い式\eqref{eq:2.6}は線型方程式系
+\begin{equation}
+\label{eq:4.7}
+\widetilde{H}_\beta = p \widetilde{K}, \quad
+\widetilde{K}_\alpha = q \widetilde{H},
+\end{equation}
+に制約条件
+\begin{equation}
+\label{eq:4.8}
+H_\circ \widetilde{K} + K_\circ \widetilde{H} - p_3 HK = 0,
+\end{equation}
+を課したものとなる．
+関係式\eqref{eq:4.7}は方程式\eqref{eq:4.2b}, \eqref{eq:4.2d}あるいは\eqref{eq:4.2c}, \eqref{eq:4.2e}のコピーに他ならない．
+これらは，あるベクトル値函数$\widetilde{\br}$に対するペア
+\begin{equation}
+\label{eq:4.9}
+\widetilde{\br}_\alpha = \widetilde{H} \bX, \quad
+\widetilde{\br}_\beta = \widetilde{K} \bY,
+\end{equation}
+の積分可能条件である．
+したがって$\widetilde{\br}$を，主曲率$\widetilde{\kappa}_1 = - H_\circ/\widetilde{H}$, $\widetilde{\kappa}_2 = - K_\circ/ \widetilde{K}$をもつ曲面$\widetilde{\Sigma}$の位置ベクトルとみなすとき，関係式\eqref{eq:4.4}, \eqref{eq:4.5}, \eqref{eq:4.9}は膜$\Sigma$，球面$\Sigma_\circ$および曲面$\widetilde{\Sigma}$上の曲率線に沿う接ベクトルが平行であることを示している．
+さらにGauss-Weingartenの公式\eqref{eq:4.3}は正規直交枠$(\bX, \bY, \bN)$のみで定式化されているので，曲面$\widetilde{\Sigma}$も曲率線座標によってパラメータづけられることがわかる．
+曲率線座標\footnote{Combescure変換は元来，共役座標をもつ曲面に対して定義されるものであるが，曲率線座標も保存することが直ちに確かめられる．}によって表示された$2$つの曲面に対し，対応する点においてそれぞれの接ベクトルが平行であるとき，互いの{\bf Combescure変換}と呼ぶ~\cite{SK2003}．
+したがって，曲面$\widetilde{\Sigma}$は膜$\Sigma$のCombescure変換をなすことがわかり，以下の定理が成り立つ．
+%
+\begin{thm}
+\label{thm:4.1}
+膜$\Sigma$の法線方向に一定の荷重$p  = p_3 \bN$が作用し，主曲率線方向に面内せん断$S$が生じずに釣り合うためには，膜の{\rm Combescure}変換$\widetilde{\Sigma}$で直交条件
+\begin{equation}
+\label{eq:4.10}
+\bH^T \Lambda \bK = 0,
+\end{equation}
+を満たすものの存在が必要十分である．
+ここで
+\begin{equation}
+\bH =
+\begin{pmatrix}
+H_\circ \\
+H \\
+\widetilde{H}
+\end{pmatrix}, \quad
+\bK =
+\begin{pmatrix}
+K_\circ \\
+K \\
+\widetilde{K}
+\end{pmatrix}, \quad
+\Lambda =
+\begin{pmatrix}
+0 & 0 & 1 \\
+0 & - p_3 & 0 \\
+1 & 0 & 0
+\end{pmatrix},
+\end{equation}
+とおいた．
+面内応力成分$N_1$, $N_2$は以下の式で与えられる：
+\begin{equation}
+\label{eq:4.12}
+N_1 = \frac{\kappa_2}{\widetilde{\kappa}_2} = \frac{\widetilde{K}}{K}, \quad
+N_2 = \frac{\kappa_1}{\widetilde{\kappa}_1} = \frac{\widetilde{H}}{H}.
+\end{equation}
+\end{thm}
+%
+3次元ベクトル$\bH$, $\bK$を高次元のもので置き換え，対応するCombescure変換の組に対してこれらのベクトルが対称定行列$\Lambda$に関して直交するという条件に置き換えると，一般的な可積分O曲面のクラスが得られる~\cite{SK2003}．
+O曲面は双等温，平均曲率一定，極小，線型Weingarten，Guichard，Petot曲面，およびGauss曲率一定曲面のような，古典的な曲面クラスを包含した形で一般化するクラスである．
+上述の膜O曲面は，行列
+\begin{equation}
+\label{eq:4.13}
+\Lambda =
+\begin{pmatrix}
+c & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0
+\end{pmatrix},
+\end{equation}
+に付随する古典的なGuichard曲面を想起させる．
+この場合，直交制約条件\eqref{eq:4.10}は
+\begin{equation}
+\label{eq:4.14}
+R_1 \widetilde{R}_2 + R_2 \widetilde{R}_1 + c = 0,
+\end{equation}
+と書き換えられる．
+これはまさに，Guichard~\cite{Guichard1900}が彼の名を冠する曲面のクラスを定義した際の制約条件である．
+膜O曲面の場合，制約条件\eqref{eq:4.10}は
+\begin{equation}
+\label{eq:4.15}
+\widetilde{R}_1 + \widetilde{R}_2 + p_3 R_1 R_2 = 0,
+\end{equation}
+と表すことができる．
+作り方から，これはまさに法線方向の釣り合い式\eqref{eq:2.6c}に他ならない．
+
+上記の定理を，Combescure変換に頼ることなく，完全に膜形状の幾何によって定式化することは有益である．
+簡単のため，ここでは「ジェネリックな場合$\kappa_1 \neq 0$, $\kappa_2 \neq 0$」に焦点を当てる．
+O曲面の理論~\cite{SK2003}により，$2$つの第一積分
+\begin{equation}
+\label{eq:4.16}
+\bH^T \Lambda \bH = - f(\alpha), \quad
+\bK^T \Lambda \bK = - g(\beta),
+\end{equation}
+が存在する．
+これらの関係式は直接確かめることができる．
+釣り合い方程式~\eqref{eq:4.7}はこのとき恒等的に満たされ，残りの法線方向の釣り合い式\eqref{eq:4.8}は膜の幾何への制約を与える．
+もとの変数を用いると，これは以下のように定式化される．
+%
+\begin{thm}
+\label{thm:4.2}
+法線方向に一定の荷重が作用し，面内せん断が生じない膜形状の幾何は，{\rm Gauss-Mainardi-Codazzi}方程式\eqref{eq:2.2}に対する制約条件
+\begin{equation}
+\label{eq:4.17}
+\frac{g(\beta)}{A_2^2} \kappa_1^2 + \frac{f(\alpha)}{A_1^2} \kappa_2^2 = p_3 (\kappa_1 - \kappa_2)^2,
+\end{equation}
+によって特徴づけられる．
+このとき\eqref{eq:2.2}および\eqref{eq:4.17}の任意の解に対し，面内応力$N_1$, $N_2$は次式で定まる：
+\begin{equation}
+\label{eq:4.18}
+2 \kappa_2 N_1 + p_3 = \frac{g(\beta)}{A_2^2}, \quad
+2 \kappa_1 N_2 + p_3 = \frac{f(\alpha)}{A_1^2}.
+\end{equation}
+\end{thm}
+%
+関係式\eqref{eq:4.18}は\eqref{eq:4.16}と同値であり，したがってもとのGauss-Mainardi-Codazzi方程式および釣り合い式\eqref{eq:2.2}, \eqref{eq:2.6}の第一積分をなす．
+制約条件\eqref{eq:4.17}は，法線方向の釣り合い式\eqref{eq:2.6c}に他ならない．
+この制約条件は，実際，曲率線に沿う変数変換の下で不変であるという意味で幾何学的であることは強調しておこう．
+これは任意函数$f, g$を$\pm1, 0$と(座標線の) スケール変換するのに利用できる．
+
+膜の幾何学的形状がその応力分布をどのように決定するかということを観察するのは自然であろう．
+したがって，法線方向の荷重$p_3$を与えたとき，制約条件\eqref{eq:4.17}が満たされるような函数$f, g$が存在するような曲面を許容的 (admissible) であると呼ぶこととする．
+制約条件\eqref{eq:4.17}により，以下の定理が導かれる．
+%
+\begin{thm}
+\label{thm:4.3}
+$\Sigma$を許容的曲面とする．
+$p_3 = 0$のとき，応力分布は$N_1$, $N_2$の定数倍を除き，式\eqref{eq:4.18}によって一意的に定まる．
+$p_3 \neq 0$かつ
+\begin{equation}
+\label{eq:4.19}
+\left[ \ln \left( \frac{\kappa_1 A_1}{\kappa_2 A_2} \right) \right]_{\alpha \beta} \neq 0,
+\end{equation}
+が成り立つとき，付随する面内応力$N_1$, $N_2$は\eqref{eq:4.18}によって一意的に定まる．
+$p_3 \neq 0$かつ
+\begin{equation}
+\label{eq:4.20}
+\frac{\kappa_1 A_1}{\kappa_2 A_2} = \frac{A(\alpha)}{B(\beta)},
+\end{equation}
+のとき，$\ve$を任意パラメータとして，応力分布は
+\begin{equation}
+\label{eq:4.21}
+N_1 (\ve) = N_1 - \ve \frac{B^2}{2 \kappa_2 A_2^2}, \quad
+N_2 (\ve) = N_2 + \ve \frac{A^2}{2 \kappa_1 A_1^2},
+\end{equation}
+で与えられる．
+ここで$N_1 = N_1 (0)$, $N_2 = N_2 (0)$は\eqref{eq:4.18}によって定まる．
+\end{thm}
+%
+\begin{proof}
+$2$つのペア$f, g$と$\widetilde{f}, \widetilde{g}$に対して制約条件\eqref{eq:4.17}を満たす曲面$\Sigma$を考える．
+$p_3 = 0$のとき
+\begin{equation}
+\label{eq:4.22}
+\frac{f(\alpha)}{g(\beta)} = \frac{\widetilde{f}(\alpha)}{\widetilde{g}(\beta)} = - \frac{\kappa_1^2 A_1^2}{\kappa_2^2 A_2^2},
+\end{equation}
+ゆえ$\widetilde{f}/f = \widetilde{g}/g = {\rm const.}$となる．
+$p_3 \neq 0$のとき，
+\begin{equation}
+\label{eq:4.23}
+(\widetilde{g}(\beta) - g(\beta)) \frac{\kappa_1^2}{A_2^2} + (\widetilde{f}(\alpha) - f(\alpha)) \frac{\kappa_2^2}{A_1^2} = 0,
+\end{equation}
+であるから，
+\begin{equation}
+\label{eq:4.24}
+\left[ \ln \left( \frac{\kappa_1 A_1}{\kappa_2 A_2} \right) \right]_{\alpha \beta} = 0,
+\end{equation}
+のとき$\widetilde{f} = f$, $\widetilde{g} = g$となり，$\widetilde{N}_1 = N_1$, $\widetilde{N}_2 = N_2$が得られる．
+\begin{equation}
+\frac{\kappa_1 A_1}{\kappa_2 A_2} = \frac{A(\alpha)}{B(\beta)},
+\end{equation}
+のとき，
+\begin{equation}
+\frac{\widetilde{f} - f}{A^2} = - \frac{\widetilde{g} - g}{B^2} = \ve = {\rm const.},
+\end{equation}
+となる．
+したがって，$\widetilde{N}_1 = N_1 (\ve)$, $\widetilde{N}_2 = N_2 (\ve)$は\eqref{eq:4.21}によって$N_1$, $N_2$と関係づけられる．
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%Particular membrane geometries. Canal surfaces and Dupin cyclides
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Particular membrane geometries. Canal surfaces and Dupin cyclides}
+\label{sec:5}
+
+ここでは，膜O曲面の特別なクラスとそれらの性質について議論しよう．
+我々は4つの自然な場合に関心がある．
+
+{\bf Case 1.}　法線方向の荷重がゼロのとき，すなわち$p_3 = 0$のとき，直交条件\eqref{eq:4.10}は
+\begin{equation}
+\label{eq:5.1}
+\begin{pmatrix}
+H_\circ \\
+\widetilde{H}
+\end{pmatrix}^T
+\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+K_\circ \\
+\widetilde{K}
+\end{pmatrix}
+=0
+\end{equation}
+に単純化される．
+したがって，後者は曲面$\widetilde{\Sigma}$に対する制約を課し，$\Sigma$は$\widetilde{\Sigma}$の任意のCombescure変換となる．
+式\eqref{eq:5.1}は
+\begin{equation}
+\label{eq:5.2}
+\widetilde{\H} = \widetilde{\kappa}_1 + \widetilde{\kappa}_2 = 0,
+\end{equation}
+という形となり，したがって極小曲面$\widetilde{\Sigma}$の任意のCombescure変換$\Sigma$は釣り合い状態の膜とみなせる．
+制約条件\eqref{eq:4.17}は
+\begin{equation}
+\label{eq:5.3}
+\left[ \ln \left( \frac{H_\circ}{K_\circ} \right) \right]_{\alpha \beta} = 0,
+\end{equation}
+となり，したがって曲率線の適切な変数変換によって
+\begin{equation}
+\label{eq:5.4}
+H_\circ = - K_\circ = e^{-\vp},
+\end{equation}
+とできる．
+このときGauss-Mainardi-Codazzi方程式\eqref{eq:4.2a}, \eqref{eq:4.2c}, \eqref{eq:4.2e}はLiouville方程式
+\begin{equation}
+\label{eq:5.5}
+\vp_{\a \a} + \vp_{\b \b} = e^{-2\vp},
+\end{equation}
+および$p = \vp_\b$, $q = \vp_\a$に帰着される．
+
+{\bf Case 2.}　法線方向の荷重がゼロでないとき：まず，条件
+\begin{equation}
+\label{eq:5.6}
+\widetilde{H} = \mu H - \lambda H_\circ, \quad
+\widetilde{K} = \mu K - \lambda K_\circ,
+\end{equation}
+を課した場合を考える．
+このとき直交制約条件\eqref{eq:4.10}は以下の形となる：
+\begin{equation}
+\label{eq:5.7}
+\begin{pmatrix}
+H_\circ \\
+H
+\end{pmatrix}^T
+\begin{pmatrix}
+2\lambda & - \mu \\
+- \mu & p_3
+\end{pmatrix}
+\begin{pmatrix}
+K_\circ \\
+K
+\end{pmatrix}
+= 0.
+\end{equation}
+これはちょうど線型Weingarten条件\eqref{eq:3.6}である．
+膜$\Sigma$に平行な曲面$\Sigma^\parallel$，すなわち
+\begin{equation}
+\label{eq:5.8}
+\br^\parallel = \br + c \bN, \quad c = - \frac{\mu}{p_3},
+\end{equation}
+によって表すと，
+\begin{equation}
+\label{eq:5.9}
+\br_\alpha^\parallel = H^\parallel \bX, \quad
+\br_\beta^\parallel = K^\parallel \bY, \quad
+H^\parallel = H + c H_\circ, \quad
+K^\parallel = K + c K_\circ,
+\end{equation}
+となる．
+このとき制約条件\eqref{eq:5.7}は
+\begin{equation}
+\label{eq:5.10}
+\begin{pmatrix}
+H_\circ \\
+H^\parallel
+\end{pmatrix}^T
+\begin{pmatrix}
+2\lambda p_3 - \mu^2 & 0 \\
+0 & p_3^2
+\end{pmatrix}
+\begin{pmatrix}
+K_\circ \\
+K^\parallel
+\end{pmatrix}
+= 0,
+\end{equation}
+あるいは同値な書き換えとして
+\begin{equation}
+(\mu^2 - 2 \lambda p_3) \K^\parallel = p_3^2.
+\end{equation}
+よって$\mu^2 - 2 \lambda p_3 \neq 0$のとき，線型Weingarten曲面の形状である膜は，Gauss曲率一定曲面の曲面の平行曲面である．
+
+{\bf Case 3.}　荷重$p_3$がゼロでないとき，\eqref{eq:4.20}の仮定のもと，$H_\circ$, $K_\circ$は\eqref{eq:5.4}の形でとることができ，Liouville方程式\eqref{eq:5.5}が得られる．
+変数
+\begin{equation}
+\label{eq:5.12}
+P = H+ K, \quad Q = H - K,
+\end{equation}
+を用いると，残りのGauss-Mainardi-Codazzi方程式\eqref{eq:4.2b}, \eqref{eq:4.2d}は以下の形となる：
+\begin{equation}
+\label{eq:5.13}
+Q_\alpha = P_\alpha - \vp_\a (P + Q), \quad
+Q_\b = - P_\b + \vp_\b (P - Q).
+\end{equation}
+さらに制約条件\eqref{eq:4.17}は以下の形となる：
+\begin{equation}
+\label{eq:5.14}
+p_3 P^2 = f(\alpha) + g(\beta).
+\end{equation}
+\eqref{eq:5.13}に対する積分可能条件$Q_{\a \b} = Q_{\b \a}$は$P$に関する$2$階の方程式となり，\eqref{eq:5.14}を用いると以下の形をとる：
+\begin{equation}
+\label{eq:5.15}
+\vp_{\a \b} + \vp_\a \vp_\b = - \frac{f_\a g_\b}{4 (f + g)^2}.
+\end{equation}
+定理~\ref{thm:4.3}により，$p_3 \neq 0$のとき，応力分布が$1$パラメータの自由度をもつ場合に付随する曲面のクラスの支配方程式は，過剰決定系\eqref{eq:5.5}, \eqref{eq:5.15}である．
+あるいは$h  = e^\vp$とおくとき，同値な書き換えとして過剰決定系
+\begin{subequations}
+\label{eq:5.16}
+\begin{align}
+(\ln h)_{\a \a} + (\ln h)_{\b \b} &= \frac{1}{h^2}, \label{eq:5.16a} \\
+h_{\a \b} = - \frac{f_\a g_\b}{4(f + g)^2} h, \label{eq:5.16b}
+\end{align}
+\end{subequations}
+が支配方程式を与える．
+
+函数$f, g$を適切に制限すると，ペア\eqref{eq:5.16}が積分可能であることを示すことができる．
+ここでは，$h$が変数分離が可能な場合に焦点を当てよう：
+\begin{equation}
+\label{eq:5.17}
+h = a(\a) + b(\b) \iff f_\alpha g_\beta = 0.
+\end{equation}
+いま，関係式
+\begin{equation}
+\label{eq:5.18}
+(\kappa_1)_\a (\kappa_2)_\b \sim P_\a P_\b,
+\end{equation}
+を直ちに示すことができるので，変数分離条件\eqref{eq:5.17}より
+\begin{equation}
+\label{eq:5.19}
+(\kappa_1)_\a (\kappa_2)_\b = 0,
+\end{equation}
+を得る．
+条件式\eqref{eq:5.19}はcanal 曲面 (Blaschke~\cite{Blaschke1967a,Blaschke1967b}) を定める性質にほかならない．
+したがって，Liouville方程式\eqref{eq:5.16a}の変数分離解は，特別なcanal曲面をなす釣り合い状態の膜に対応する．
+
+{\bf Case 4.}　先の結果は，canal曲面を詳細に調べるべきことを示唆している．
+canal曲面は，半径が変化する球面の中心を空間曲線に沿って動かした際の包絡面として定義される．
+したがって半径$r(u)$の球面$S(u)$の中心が曲線$\gamma(u)$に沿って動くとき，対応するcanal曲面は以下のように表せる~\cite{Blaschke1967a,Blaschke1967b}：
+\begin{equation}
+\label{eq:5.20}
+\br(u, v) = \gamma - rr' t + r \sqrt{1-(r')^2} (\cos v n + \sin v b),
+\end{equation}
+ここで$t, n, b$はそれぞれ曲線$\gamma$の単位接ベクトル，主法線ベクトル，従法線ベクトルを表す．
+曲線$u = {\rm const.}$が円周であり，曲率線をなすことを示すのは難しくない．
+曲率線座標$\a$, $\b$によって，canal曲面は条件\eqref{eq:5.19}によって特徴づけられる．
+一般性を失うことなく
+\begin{equation}
+\label{eq:5.21}
+(\kappa_2)_\beta = 0,
+\end{equation}
+としてよく，
+\begin{equation}
+\label{eq:5.22}
+\left( \frac{(A_2)_\alpha}{A_1A_2} \right)_\beta = 0,
+\end{equation}
+のとき\eqref{eq:2.2c}と両立する．
+ここで$\kappa_1 \neq \kappa_2$と仮定した．
+したがってcanal曲面は方程式系\eqref{eq:2.2}, \eqref{eq:5.21}, \eqref{eq:5.22}によって統制される．
+これと関連して，定義から曲線$\alpha = {\rm const.}$の捩率$\tau_2$は行列式$|\bY, \bY_\beta, \bY_{\b\b}|$と比例し，したがってGauss-Weingartenの公式\eqref{eq:4.3}により
+\begin{equation}
+\tau_2 \sim |\bY, \bY_\b, \bY_{\b\b}| \sim \left( \frac{(A_2)_\alpha}{\kappa_2 A_1 A_2} \right)_\beta,
+\end{equation}
+を得る．
+したがって，条件\eqref{eq:5.21}および\eqref{eq:5.22}は曲率線$\alpha = {\rm const.}$が平面曲線であることを示している．
+実際，これは上述の円周$u = {\rm const.}$にほかならない．
+
+canal曲面の形状をした膜が，一定内圧条件下で釣り合い状態にある場合はSoyu\c{c}ok~\cite{Soyucok1996}によって考察されている．
+定理~\ref{thm:4.3}との重要なつながりを明らかにするために，釣り合い条件\eqref{eq:2.6}が任意のcanal曲面に対して満たされることを示す必要がある．
+そのために，\eqref{eq:2.6c}を微分すると
+\begin{align}
+\label{eq:5.24}
+\begin{aligned}
+\kappa_1 (N_1)_\beta &= (\ln A_1)_\beta [(\kappa_1 - 2 \kappa_2) N_1 + \kappa_2 N_2], \\
+\kappa_2 (N_2)_\alpha &= (\ln A_2)_\alpha [(\kappa_2 - 2 \kappa_1) N_2 + \kappa_1 N_1] - (\kappa_1)_\alpha N_1,
+\end{aligned}
+\end{align}
+を得る．
+方程式系\eqref{eq:2.6a}, \eqref{eq:2.6b}, \eqref{eq:5.24}に付随する積分可能条件$(N_i)_{\a\b} = (N_i)_{\b\a}$はただ一つの制約条件，すなわち
+\begin{equation}
+\label{eq:5.25}
+\tau_1 [ (\kappa_1 - 2 \kappa_2) N_1 + \kappa_2 N_2 ] = 0,
+\end{equation}
+に帰着する．
+ここで$\tau_1$は曲線$\beta = {\rm const.}$の捩率を表す．
+したがって，曲率線$\beta = {\rm const.}$が平面上にないとき\footnote{注：$\tau_1 \neq 0$のとき}，\eqref{eq:2.6c}, \eqref{eq:5.25}は$N_1$, $N_2$について解くことができる．
+表示式
+\begin{equation}
+\label{eq:5.26}
+N_1 = - \frac{p_3}{2 \kappa_2}, \quad
+N_2 = \frac{(\kappa_1 - 2 \kappa_2)p_3}{2\kappa_2^2},
+\end{equation}
+を釣り合い式\eqref{eq:2.6a}, \eqref{eq:2.6b}に代入すると，これらは実は自然に満たされていることが確かめられる．
+したがって，曲率線$\beta = {\rm const.}$が平面上にないような任意のcanal曲面は，\eqref{eq:5.26}で与えられる一意的な面内垂直応力成分$N_1$, $N_2$をもつ，釣り合い状態の膜とみなすことができる．
+ところが$\tau_1 = 0$のとき，すなわち曲率線の族がいずれも平面的であるとき，方程式系\eqref{eq:2.6a}, \eqref{eq:2.6b}, \eqref{eq:5.24}は両立するFrobenius系であって，$p_3$を積分定数とし，\eqref{eq:2.6c}を第一積分にもつような系を与えている．
+その解は一つの積分定数に依存している．
+したがって，曲率線が平面であるような任意のcanal曲面は，任意に与えられた法線方向の荷重$p_3$に対し，面内応力分布が$1$パラメータの自由度をもつような釣り合い状態の膜とみなすことができる．
+ところが$p_3 = 0$のとき，この$1$パラメータの自由度は単に$N_1$, $N_2$のスケーリングに対応する．
+したがって，曲率線が平面であるcanal曲面は定理~\ref{thm:4.3}における3番目と1番目のカテゴリーに含まれることになる．
+これらは回転面および古典的なDupin cyclides ($(\kappa_1)_\alpha = 0$) を包含する．
+後者は曲率線がいずれも円周であるちおう要請によって定義される\cite{Eisenhart1960,Blaschke1967a,Blaschke1967b}．
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%Particular membrane geometries. Canal surfaces and Dupin cyclides
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{A linear representation and associated B\"acklund transformation}
+\label{sec:6}
+
+O曲面の可積分性は，LaxペアおよびB\"acklund変換の存在に反映されている~\cite{SK2003}．
+O曲面に対するLaxペアの存在は「非線型な」Gauss-Mainardi-Codazzi方程式および釣り合い式\eqref{eq:2.2}, \eqref{eq:2.6}, \eqref{eq:3.4}が，「線型な」行列値方程式の組の積分可能条件に完全にエンコードされていることを示唆している．
+以下の定理は直接確かめることができる：
+%
+\begin{thm}
+\label{thm:6.1}
+スカラー量$\mathcal{X}$, $\mathcal{Y}$, $\mathcal{R}_\circ$, $\mathcal{R}$, $\widetilde{\mathcal{R}}$に対する線型方程式系
+\begin{align}
+\label{eq:6.1}
+\begin{aligned}
+\begin{pmatrix}
+\mathcal{X} \\
+\mathcal{Y} \\
+\mathcal{R}_\circ \\
+\mathcal{R} \\
+\widetilde{\mathcal{R}}
+\end{pmatrix}_\alpha &=
+\begin{pmatrix}
+0 & -p & m \widetilde{H} - H_\circ & - mp_3 H & m H_\circ \\
+p & 0 & 0 & 0 & 0 \\
+H_\circ & 0 & 0 & 0 & 0 \\
+H & 0 & 0 & 0 & 0 \\
+\widetilde{H} & 0 & 0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\mathcal{X} \\
+\mathcal{Y} \\
+\mathcal{R}_\circ \\
+\mathcal{R} \\
+\widetilde{\mathcal{R}}
+\end{pmatrix}, \\
+%
+\begin{pmatrix}
+\mathcal{X} \\
+\mathcal{Y} \\
+\mathcal{R}_\circ \\
+\mathcal{R} \\
+\widetilde{\mathcal{R}}
+\end{pmatrix}_\beta &=
+\begin{pmatrix}
+0 & q & 0 & 0 & 0 \\
+-q & 0 & m \widetilde{K} - K_\circ & - mp_3 K & m K_\circ \\
+0 & K_\circ & 0 & 0 & 0 \\
+0 & K & 0 & 0 & 0 \\
+0 & \widetilde{K} & 0 & 0 & 0 \\
+\end{pmatrix}
+\begin{pmatrix}
+\mathcal{X} \\
+\mathcal{Y} \\
+\mathcal{R}_\circ \\
+\mathcal{R} \\
+\widetilde{\mathcal{R}}
+\end{pmatrix},
+\end{aligned}
+\end{align}
+に対する積分可能条件は，{\rm Gauss-Mainardi-Codazzi}方程式
+\begin{equation}
+\label{eq:6.2}
+p_\beta + q_\alpha + H_\circ K_\circ = 0, \quad
+H_\beta = pK, \quad
+(H_\circ)_\beta = p K_\circ, \quad
+K_\alpha = q H, \quad
+(K_\circ)_\alpha = q H_\circ
+\end{equation}
+および膜の釣り合い式
+\begin{equation}
+\label{eq:6.3}
+\widetilde{H}_\beta = p \widetilde{K}, \quad
+\widetilde{K}_\alpha = q \widetilde{H}, \quad
+H_\circ \widetilde{K} + K_\circ \widetilde{H} - p_3 HK = 0,
+\end{equation}
+と同値である．
+ここで$m$は任意の定数である．
+\end{thm}
+%
+一般的なO曲面に対するB\"acklund変換は，Schief-Konopelchenko~\cite{SK2003}によって確立された．
+それらは，共役網に対する古典的なFundamental変換と，その特殊化である，曲率線を保存する古典的なRibaucour変換\cite{RS2002}に基づいている．
+膜O曲面の場合，付随するB\"acklund変換は以下のように表すことができる：
+%
+\begin{thm}
+\label{thm:6.2}
+{\rm Gauss-Mainardi-Codazzi}方程式および膜の釣り合い式\eqref{eq:6.2}, \eqref{eq:6.3}は変換
+\begin{align}
+\label{eq:6.4}
+\begin{aligned}
+\bH' = \bH - \frac{\overline{H} \bR}{\mathcal{M}}, \quad
+\bK' = \bK - \frac{\overline{K} \bR}{\mathcal{M}}, \quad
+p' = p - \frac{\mathcal{Y} \overline{H}}{\mathcal{M}}, \quad
+q' = q - \frac{\mathcal{X} \overline{K}}{\mathcal{M}},
+\end{aligned}
+\end{align}
+の下で不変である．
+ここで$\mathcal{X}$, $\mathcal{Y}$, $\bR = (\mathcal{R}_\circ, \mathcal{R}, \widetilde{\mathcal{R}})^T$は$2$次の制約条件
+\begin{equation}
+\label{eq:6.5}
+\mathcal{X}^2 + \mathcal{Y}^2 + \mathcal{R}_\circ^2 = m (2 \mathcal{R}_\circ \widetilde{\mathcal{R}} - p_3 \mathcal{R}^2),
+\end{equation}
+に関する線型表現\eqref{eq:6.1}の解であり，
+\begin{align}
+\label{eq:6.6}
+\begin{aligned}
+\overline{H} &= \mathcal{X}_\a + p \mathcal{Y} + H_\circ \mathcal{R}_\circ, \\
+\overline{K} &= \mathcal{Y}_\b + q \mathcal{X} + K_\circ \mathcal{R}_\circ, \\
+2\mathcal{M} &= \mathcal{X}^2 + \mathcal{Y}^2 + \mathcal{R}_\circ^2,
+\end{aligned}
+\end{align}
+とおいた．
+膜$\Sigma$, $\Sigma'$は以下の式で関係付けられる：
+\begin{equation}
+\br' = \br - \frac{\mathcal{R} \bM}{\mathcal{M}}, \quad
+\bM = \mathcal{X} \bX + \mathcal{Y} \bY + \mathcal{R}_\circ \bN.
+\end{equation}
+\end{thm}
+%
+上述のB\"{a}cklund変換は，法線方向の荷重$p_3$に対し，面内応力成分$N_1$, $N_2$が\eqref{eq:4.12}で決まり，面内せん断$S$が生じないような，広範なクラスの釣り合い状態の膜の明示的な構成に用いることができる\footnote{注：B\"acklund変換は解が組織的に構成できる根拠を理論的に与えるものであって，具体的な解をこの手法で作るのは一般に大変．}．
+
+最後に，膜の幾何学的条件として$A_1 = A_2$が課せられたとき，ここでの議論は$SA_1^2 = {\rm const.}$を満たす場合にも適用できることに注意しよう．
+というのも，このとき釣り合い式\eqref{eq:2.3}における面内せん断の項がゼロとなるからである．
+特に，これは平均曲率一定曲面，回転面，Dupin cyclidesの形状をした膜に適用可能である．
+$A_1 = A_2$による制約をうける曲面は「solitonic」であることが知られ，isothermic surfaceと呼ばれる~\cite{Eisenhart1960}．
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%参考文献
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{99}
+
+\bibitem{AS1981} Ablowitz, M. J. and Segur, H., 1981, 
+Solitons and the inverse scattering transform. Philadelphia, PA: SIAM.
+
+\bibitem{Beltrami1882} Beltrami, E., 1882, 
+Sull' equilibrio delle superficie flessibili ed inestendibili. {\em Mem. Rend. Acad. Sci. Bologna} {\bf 15}, 217--265.
+
+\bibitem{Blaschke1967a} Blaschke, W. 1967a, 
+Differentialgeometrie I. New York: Chelsea.
+
+\bibitem{Blaschke1967b} Blaschke, W. 1967b,
+Differentialgeometrie II. New York: Chelsea.
+
+\bibitem{Eisenhart1960} Eisenhart, L. P. 1960,
+A treatise on the differential geometry of curves and surfaces. New York: Dover.
+
+\bibitem{Farouki1985} Farouki, R. T. 1985,
+Exact offset procedures for simple solids. {\em Comput. Aided Geom. Des.} {\bf 2}, 257--279.
+
+\bibitem{Farouki1986} Farouki, R. T. 1986,
+The approximation of non-degenerate offset surfaces. {\em Comput. Aided Geom. Des.} {\bf 3}, 15--43.
+
+\bibitem{Guichard1900} Guichard, C. 1900,
+Sur les surfaces isothermiques. {\em C. R. Acad. Sci. Paris} {\bf 130}, 159--162.
+
+\bibitem{HD1984} Hoenselaers, C. and Dietz, W. (eds) 1984,
+Solutions of Einstein's equations: techniques and results. Lecture Notes in Physics, no. 205. Springer.
+
+\bibitem{Howard1953} Howard, L. N. 1953 Constant speed flows. PhD thesis, Princeton University, Princeton, NJ, USA.
+
+\bibitem{LC1831} Lam\`e, G. and Clapeyron, B. P. E. 1831,
+M\`emoire sur l’ \`equilibre int\`erieur des corps solides homog\`enes. {\em J. F. Math. (Crelle)} {\bf 7}.
+
+\bibitem{Laplace1806} Laplace, P. S. 1806,
+M\`ecanique c\`eleste. Impr. Imperial.
+
+\bibitem{Lecornu1880} Lecornu, L. 1880,
+Sur l' \`equilibre des surfaces flexibles et inextensibles. {\em J. Ecole Polytech.} {\bf 48}, 1--109.
+
+\bibitem{Novozhilov1964} Novozhilov, V. V. 1964,
+Thin shell theory, 2nd edn. Groningen: Noordhoff.
+
+\bibitem{Prim1949} Prim, R. 1949,
+On the uniqueness of flows with given streamlines. {\em J. Math. Phys.} {\bf 28}, 50--53.
+
+\bibitem{Rogers2000} Rogers, C. 2000,
+On the Heisenberg spin equation in hydrodynamics. Research Report, Institute of Pure and Applied Mathematics, Rio de Janeiro, Brazil.
+
+\bibitem{RS2000} Rogers, C. and Schief, W. K. 2000,
+On geodesic hydrodynamic motions. Heisenberg spin connections. {\em J. Math. Analysis Applic.} {\bf 251}, 855--870.
+
+\bibitem{RS2002} Rogers, C. and Schief, W. K. 2002,
+Darboux and B\"{a}cklund transformations: geometry and modern applications in soliton theory. In Cambridge Texts in Applied Mathematics. Cambridge University Press.
+
+\bibitem{Schief2003} Schief, W. K. 2003,
+Nested toroidal flux surfaces in magnetohydrostatics. Generation via soliton theory. {\em J. Plasma Phys.} (In the press.)
+
+\bibitem{SK2003} Schief, W. K. and Konopelchenko, B. G. 2003,
+On the unification of classical and novel integrable surfaces. I. Differential geometry. {\em Proc. R. Soc. Lond. A} {\bf 459}, 67--84.
+
+\bibitem{Soyucok1996} Soyu\c{c}ok, Z. 1996,
+Infinitesimal deformations of surfaces and the stress distribution on some membranes under constant inner pressure. {\em Int. J. Engng Sci.} {\bf 34}, 993--1004.
+
+\bibitem{BG1996} van Brunt, B. and Grant, K. 1996,
+Potential applications of Weingarten surfaces in CAGD. I. Weingarten surfaces and surface shape investigation. {\em Comput. Aided Geom. Des.} {\bf 13}, 569--582.
+
+\bibitem{Wasserman1962} Wasserman, R. H. 1962,
+On a class of three-dimensional compressible fluid flows. {\em J. Math. Analysis Applic.} {\bf 5}, 119--135.
+
+\bibitem{Young1805} Young, T. 1805,
+An essay on the cohesion of fluids. {\em Phil. Trans. R. Soc. Lond.} {\bf 95}, 65--87.
+\end{thebibliography}
 </body>
 </html>
