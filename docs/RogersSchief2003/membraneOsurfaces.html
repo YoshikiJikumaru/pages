@@ -247,6 +247,7 @@ c (\kappa_1 + \kappa_2) + q_n = 0
 ちなみに，それ以前にNavier (1826) によってその原型はすでに発見されている．
 <br>
 さて，このように面内応力に条件を課すことで膜の幾何学的形状に制約が課される様子をもう少しみてみよう．
+</section>
 
 <section>
   <h2>シェルの膜理論における釣り合い式：膜O曲面</h2>
@@ -272,6 +273,109 @@ c (\kappa_1 + \kappa_2) + q_n = 0
 = - H_\circ \oK - K_\circ \oH + q_n HK,
 \]
 が得られるが，ここでベクトル $\bH$, $\bK$ を以下のように設定する：
+</section>
 
+<section>
+<h2>線型表示とB\"acklund変換</h2>
+
+Gauss-Mainardi-Codazzi方程式および膜の釣り合い式からなる非線型系は，以下のような線型問題の両立条件として表される：
+
+スカラー量$\mathcal{X}$, $\mathcal{Y}$, $\mathcal{R}_\circ$, $\mathcal{R}$, $\widetilde{\mathcal{R}}$に対する線型方程式系
+\[
+\begin{aligned}
+\begin{pmatrix}
+\mathcal{X} \\
+\mathcal{Y} \\
+\mathcal{R}_\circ \\
+\mathcal{R} \\
+\widetilde{\mathcal{R}}
+\end{pmatrix}_\alpha &=
+\begin{pmatrix}
+0 & -p & m \widetilde{H} - H_\circ & - mp_3 H & m H_\circ \\
+p & 0 & 0 & 0 & 0 \\
+H_\circ & 0 & 0 & 0 & 0 \\
+H & 0 & 0 & 0 & 0 \\
+\widetilde{H} & 0 & 0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\mathcal{X} \\
+\mathcal{Y} \\
+\mathcal{R}_\circ \\
+\mathcal{R} \\
+\widetilde{\mathcal{R}}
+\end{pmatrix}, \\
+%
+\begin{pmatrix}
+\mathcal{X} \\
+\mathcal{Y} \\
+\mathcal{R}_\circ \\
+\mathcal{R} \\
+\widetilde{\mathcal{R}}
+\end{pmatrix}_\beta &=
+\begin{pmatrix}
+0 & q & 0 & 0 & 0 \\
+-q & 0 & m \widetilde{K} - K_\circ & - mp_3 K & m K_\circ \\
+0 & K_\circ & 0 & 0 & 0 \\
+0 & K & 0 & 0 & 0 \\
+0 & \widetilde{K} & 0 & 0 & 0 \\
+\end{pmatrix}
+\begin{pmatrix}
+\mathcal{X} \\
+\mathcal{Y} \\
+\mathcal{R}_\circ \\
+\mathcal{R} \\
+\widetilde{\mathcal{R}}
+\end{pmatrix},
+\end{aligned}
+\]
+に対する積分可能条件は，{\rm Gauss-Mainardi-Codazzi}方程式
+\[
+p_\beta + q_\alpha + H_\circ K_\circ = 0, \quad
+H_\beta = pK, \quad
+(H_\circ)_\beta = p K_\circ, \quad
+K_\alpha = q H, \quad
+(K_\circ)_\alpha = q H_\circ
+\end{equation}
+および膜の釣り合い式
+\begin{equation}
+\label{eq:6.3}
+\widetilde{H}_\beta = p \widetilde{K}, \quad
+\widetilde{K}_\alpha = q \widetilde{H}, \quad
+H_\circ \widetilde{K} + K_\circ \widetilde{H} - p_3 HK = 0,
+\]
+と同値である．
+ここで$m$は任意の定数である．
+
+{\rm Gauss-Mainardi-Codazzi}方程式および膜の釣り合い式\eqref{eq:6.2}, \eqref{eq:6.3}は変換
+\[
+\begin{aligned}
+\bH' = \bH - \frac{\overline{H} \bR}{\mathcal{M}}, \quad
+\bK' = \bK - \frac{\overline{K} \bR}{\mathcal{M}}, \quad
+p' = p - \frac{\mathcal{Y} \overline{H}}{\mathcal{M}}, \quad
+q' = q - \frac{\mathcal{X} \overline{K}}{\mathcal{M}},
+\end{aligned}
+\]
+の下で不変である．
+ここで$\mathcal{X}$, $\mathcal{Y}$, $\bR = (\mathcal{R}_\circ, \mathcal{R}, \widetilde{\mathcal{R}})^T$は$2$次の制約条件
+\[
+\mathcal{X}^2 + \mathcal{Y}^2 + \mathcal{R}_\circ^2 = m (2 \mathcal{R}_\circ \widetilde{\mathcal{R}} - p_3 \mathcal{R}^2),
+\]
+に関する線型表現\eqref{eq:6.1}の解であり，
+\[
+\begin{aligned}
+\overline{H} &= \mathcal{X}_\a + p \mathcal{Y} + H_\circ \mathcal{R}_\circ, \\
+\overline{K} &= \mathcal{Y}_\b + q \mathcal{X} + K_\circ \mathcal{R}_\circ, \\
+2\mathcal{M} &= \mathcal{X}^2 + \mathcal{Y}^2 + \mathcal{R}_\circ^2,
+\end{aligned}
+\]
+とおいた．
+膜$\Sigma$, $\Sigma'$は以下の式で関係付けられる：
+\[
+\br' = \br - \frac{\mathcal{R} \bM}{\mathcal{M}}, \quad
+\bM = \mathcal{X} \bX + \mathcal{Y} \bY + \mathcal{R}_\circ \bN.
+\]
+上述のB\"acklund変換は，法線方向の荷重$q_n$に対し，面内応力成分$T_1$, $T_2$が\eqref{eq:4.12}で決まり，
+面内せん断$S$が生じないような，広範なクラスの釣り合い状態の膜の明示的な構成に（少なくとも理論的には）用いることができる．
+</section>
 </body>
 </html>
