@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
   \gdef\bK{\boldsymbol{K}}
   \gdef\oK{\overline{K}}
   \gdef\uK{\underline{K}}
+  \gdef\bM{\boldsymbol{M}}
   \gdef\bN{\boldsymbol{N}}
   \gdef\bR{\boldsymbol{R}}
   \gdef\obR{\overline{\boldsymbol{R}}}
@@ -74,24 +75,24 @@ $\bR$ が双曲型方程式
 \]
 を満たすとき，座標 $(x, y)$ を<b>共役座標 (conjugate coordinates)</b>，アイソパラメトリックライン $x = const.$, $y=const.$ により曲面上に生成されるネットを <b>共役網 (conjugate net) </b> と呼ぶ．
  
-いま以下のようにしてポテンシャル $H$, $K$ を導入する：
+いま以下のようにしてポテンシャル $H$, $K$ を導入する: 
 \[
 \tag{1.2}
 a = (\ln A_1)_y = \frac{(A_1)_y}{A_1}, \quad 
 b = (\ln A_2)_x = \frac{(A_2)_x}{A_2}.
 \]
-さらにこれらのポテンシャル $A_1, A_2$ を用いて，接ベクトル $\bR_x$, $\bR_y$ を次のように分解する：
+さらにこれらのポテンシャル $A_1, A_2$ を用いて，接ベクトル $\bR_x$, $\bR_y$ を次のように分解する: 
 \[
 \tag{1.3}
 \bR_x = \bX A_1, \quad \bR_y = \bY A_2.
 \]
 この段階では $\bX$, $\bY$ が単位接ベクトルであることなどは要請しないものとする．
-このとき，2階の双曲型方程式 (1) は以下の1階線型方程式系へ還元される：
+このとき，2階の双曲型方程式 (1) は以下の1階線型方程式系へ還元される: 
 \[
 \tag{1.4}
 \bX_y = p \bY, \quad \bY_x = q \bX.
 \]
-ここで $p$, $q$ は次式を満たすものとして定義される：
+ここで $p$, $q$ は次式を満たすものとして定義される: 
 \[
 \tag{1.5}
 (A_1)_y = p A_2, \quad (A_2)_x = q A_1.
@@ -118,7 +119,7 @@ E. Combescure, <a href="http://www.numdam.org/item/10.24033/asens.36.pdf" target
 <section>
 <h2>直交共役座標 (曲率線座標)</h2>
 
-以下では $\bX$, $\bY$ はいずれも単位ベクトルとし，互いに直交するものと仮定する：
+以下では $\bX$, $\bY$ はいずれも単位ベクトルとし，互いに直交するものと仮定する: 
 \[
 \tag{7}
 \bX \cdot \bX = 1, \quad
@@ -159,10 +160,10 @@ H_\circ = - \kappa_1 A_1, \quad K_\circ = - \kappa_2 A_2
 と表される．
 この式をWeingartenの公式と呼ぶ．
 Weingartenの公式はまた，球面 $\Sigma_\circ$ が曲面 $\Sigma$ のCombescure変換であることを示している．
-このとき，曲面の第一・第二基本形式は以下のように表される：
+このとき，曲面の第一・第二基本形式は以下のように表される: 
 \[
-I = H^2 \, dx^2 + K^2 \, dy^2, \quad
-II = \kappa_1 H^2 \, dx^2 + \kappa_2 K^2 \, dy^2.
+I = A_1^2 \, dx^2 + A_2^2 \, dy^2, \quad
+II = \kappa_1 A_1^2 \, dx^2 + \kappa_2 A_2^2 \, dy^2.
 \]
 Combescure変換は，曲率線座標も保つことに注意．
 </section>
@@ -204,14 +205,14 @@ p_y + q_x + H_\circ K_\circ = 0,
 </section>
 
 <section>
-<h2>シェルの膜理論における釣り合い式：等張力曲面と線型Weingarten曲面</h2>
+<h2>シェルの膜理論における釣り合い式: 等張力曲面と線型Weingarten曲面</h2>
 シェル理論およびシェルの膜理論についての詳細はこちらのページを参照．
 
 シェル中央面を $\bR$ で表す．
 膜の形状および所定の外力が与えられたとき，膜の釣り合い式は面内応力に対するwell-determinedな線型系をなす．
 ところが，（物理的な）条件が面内応力に課されるとき，釣り合い式はGauss-Mainardi-Codazzi方程式に制約を課し，すなわち膜の幾何学的形状にも制約を与える．
 <br>
-いま，法線方向に作用する荷重 $q_n$ に対し，膜応力を $T_1$, $T_2$，面内せん断を $S$ と表すと，膜の釣り合い式は以下のように表される：
+いま，法線方向に作用する荷重 $q_n$ に対し，膜応力を $T_1$, $T_2$，面内せん断を $S$ と表すと，膜の釣り合い式は以下のように表される: 
 \[
 \begin{aligned}
 (A_2T_1)_x + (A_1S)_y + (A_1)_y S - (A_2)_x T_2 &= 0, \cr
@@ -250,15 +251,15 @@ c (\kappa_1 + \kappa_2) + q_n = 0
 </section>
 
 <section>
-  <h2>シェルの膜理論における釣り合い式：膜O曲面</h2>
+  <h2>シェルの膜理論における釣り合い式: 膜O曲面</h2>
 いま
 \[
 \oH = A_1T_2, \quad \oK = A_2T_1,
 \]
 とおくと，釣り合い第1, 2式（面内釣り合い式）より
 \[
-\oH_y = \frac{H_y}{K} \cdot KT_1 = p \oK, \quad
-\oK_x = \frac{K_x}{H} \cdot HT_2 = q \oH,
+\oH_y = \frac{(A_1)_y}{A_2} \cdot A_2 T_1 = p \oK, \quad
+\oK_x = \frac{(A_2)_x}{A_1} \cdot A_1 T_2 = q \oH,
 \]
 を得る．
 したがって定義より，
@@ -269,16 +270,16 @@ c (\kappa_1 + \kappa_2) + q_n = 0
 
 一方で釣り合い第3式（面外釣り合い式）より，二次形式
 \[
-0 = HK (\kappa_1 T_1 + \kappa_2 T_2 + q_n)
-= - H_\circ \oK - K_\circ \oH + q_n HK,
+0 = A_1 A_2 (\kappa_1 T_1 + \kappa_2 T_2 + q_n)
+= - H_\circ \oK - K_\circ \oH + q_n A_1A_2,
 \]
-が得られるが，ここでベクトル $\bH$, $\bK$ を以下のように設定する：
+が得られるが，ここでベクトル $\bH$, $\bK$ を以下のように設定する: 
 </section>
 
 <section>
 <h2>線型表示とB\"acklund変換</h2>
 
-Gauss-Mainardi-Codazzi方程式および膜の釣り合い式からなる非線型系は，以下のような線型問題の両立条件として表される：
+Gauss-Mainardi-Codazzi方程式および膜の釣り合い式からなる非線型系は，以下のような線型問題の両立条件として表される: 
 
 スカラー量$\mathcal{X}$, $\mathcal{Y}$, $\mathcal{R}_\circ$, $\mathcal{R}$, $\widetilde{\mathcal{R}}$に対する線型方程式系
 \[
@@ -289,12 +290,13 @@ Gauss-Mainardi-Codazzi方程式および膜の釣り合い式からなる非線�
 \mathcal{R}_\circ \\
 \mathcal{R} \\
 \widetilde{\mathcal{R}}
-\end{pmatrix}_\alpha &=
+\end{pmatrix}_x 
+&=
 \begin{pmatrix}
-0 & -p & m \widetilde{H} - H_\circ & - mp_3 H & m H_\circ \\
+0 & -p & m \widetilde{H} - H_\circ & - mq_n A_1 & m H_\circ \\
 p & 0 & 0 & 0 & 0 \\
 H_\circ & 0 & 0 & 0 & 0 \\
-H & 0 & 0 & 0 & 0 \\
+A_1 & 0 & 0 & 0 & 0 \\
 \widetilde{H} & 0 & 0 & 0 & 0
 \end{pmatrix}
 \begin{pmatrix}
@@ -311,12 +313,13 @@ H & 0 & 0 & 0 & 0 \\
 \mathcal{R}_\circ \\
 \mathcal{R} \\
 \widetilde{\mathcal{R}}
-\end{pmatrix}_\beta &=
+\end{pmatrix}_y 
+&=
 \begin{pmatrix}
 0 & q & 0 & 0 & 0 \\
--q & 0 & m \widetilde{K} - K_\circ & - mp_3 K & m K_\circ \\
+-q & 0 & m \widetilde{K} - K_\circ & - mq_n A_2 & m K_\circ \\
 0 & K_\circ & 0 & 0 & 0 \\
-0 & K & 0 & 0 & 0 \\
+0 & A_2 & 0 & 0 & 0 \\
 0 & \widetilde{K} & 0 & 0 & 0 \\
 \end{pmatrix}
 \begin{pmatrix}
@@ -328,54 +331,53 @@ H & 0 & 0 & 0 & 0 \\
 \end{pmatrix},
 \end{aligned}
 \]
-に対する積分可能条件は，{\rm Gauss-Mainardi-Codazzi}方程式
+に対する積分可能条件は，Gauss-Mainardi-Codazzi方程式
 \[
-p_\beta + q_\alpha + H_\circ K_\circ = 0, \quad
-H_\beta = pK, \quad
-(H_\circ)_\beta = p K_\circ, \quad
-K_\alpha = q H, \quad
-(K_\circ)_\alpha = q H_\circ
-\end{equation}
+p_y + q_x + H_\circ K_\circ = 0, \quad
+(A_1)_\beta = p A_2, \quad
+(H_\circ)_y = p K_\circ, \quad
+(A_2)_x = q A_1, \quad
+(K_\circ)_x = q H_\circ
+\]
 および膜の釣り合い式
-\begin{equation}
-\label{eq:6.3}
-\widetilde{H}_\beta = p \widetilde{K}, \quad
-\widetilde{K}_\alpha = q \widetilde{H}, \quad
-H_\circ \widetilde{K} + K_\circ \widetilde{H} - p_3 HK = 0,
+\[
+\tag{6.3}
+\widetilde{H}_y = p \widetilde{K}, \quad
+\widetilde{K}_x = q \widetilde{H}, \quad
+H_\circ \widetilde{K} + K_\circ \widetilde{H} - q_n A_1A_2 = 0,
 \]
 と同値である．
 ここで$m$は任意の定数である．
-
-{\rm Gauss-Mainardi-Codazzi}方程式および膜の釣り合い式\eqref{eq:6.2}, \eqref{eq:6.3}は変換
+Gauss-Mainardi-Codazzi方程式および膜の釣り合い式(6.2), (6.3)は変換
 \[
-\begin{aligned}
 \bH' = \bH - \frac{\overline{H} \bR}{\mathcal{M}}, \quad
 \bK' = \bK - \frac{\overline{K} \bR}{\mathcal{M}}, \quad
 p' = p - \frac{\mathcal{Y} \overline{H}}{\mathcal{M}}, \quad
 q' = q - \frac{\mathcal{X} \overline{K}}{\mathcal{M}},
-\end{aligned}
 \]
 の下で不変である．
 ここで$\mathcal{X}$, $\mathcal{Y}$, $\bR = (\mathcal{R}_\circ, \mathcal{R}, \widetilde{\mathcal{R}})^T$は$2$次の制約条件
 \[
-\mathcal{X}^2 + \mathcal{Y}^2 + \mathcal{R}_\circ^2 = m (2 \mathcal{R}_\circ \widetilde{\mathcal{R}} - p_3 \mathcal{R}^2),
+\mathcal{X}^2 + \mathcal{Y}^2 + \mathcal{R}_\circ^2 = m (2 \mathcal{R}_\circ \widetilde{\mathcal{R}} - q_n \mathcal{R}^2),
 \]
-に関する線型表現\eqref{eq:6.1}の解であり，
+に関する線型表現 (6.1) の解であり，
 \[
-\begin{aligned}
-\overline{H} &= \mathcal{X}_\a + p \mathcal{Y} + H_\circ \mathcal{R}_\circ, \\
-\overline{K} &= \mathcal{Y}_\b + q \mathcal{X} + K_\circ \mathcal{R}_\circ, \\
-2\mathcal{M} &= \mathcal{X}^2 + \mathcal{Y}^2 + \mathcal{R}_\circ^2,
-\end{aligned}
+\overline{H} = \mathcal{X}_x + p \mathcal{Y} + H_\circ \mathcal{R}_\circ, \quad
+\overline{K} = \mathcal{Y}_y + q \mathcal{X} + K_\circ \mathcal{R}_\circ, \quad
+2\mathcal{M} = \mathcal{X}^2 + \mathcal{Y}^2 + \mathcal{R}_\circ^2,
 \]
 とおいた．
-膜$\Sigma$, $\Sigma'$は以下の式で関係付けられる：
+膜$\Sigma$, $\Sigma'$は以下の式で関係付けられる: 
 \[
 \br' = \br - \frac{\mathcal{R} \bM}{\mathcal{M}}, \quad
 \bM = \mathcal{X} \bX + \mathcal{Y} \bY + \mathcal{R}_\circ \bN.
 \]
-上述のB\"acklund変換は，法線方向の荷重$q_n$に対し，面内応力成分$T_1$, $T_2$が\eqref{eq:4.12}で決まり，
+上述のB&auml;cklund変換は，法線方向の荷重$q_n$に対し，面内応力成分$T_1$, $T_2$が (4.12) で決まり，
 面内せん断$S$が生じないような，広範なクラスの釣り合い状態の膜の明示的な構成に（少なくとも理論的には）用いることができる．
 </section>
+<footer>
+  <small>Copyright&copy; <a href="index.html">SAMPLE SITE</a> All Rights Reserved.</small>
+  <span class="pr">《<a href="https://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
+  </footer>
 </body>
 </html>
