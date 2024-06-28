@@ -71,15 +71,15 @@ $\bR$ が双曲型方程式
 \]
 を満たすとき，座標 $(x, y)$ を<b>共役座標 (conjugate coordinates)</b>，アイソパラメトリックライン $x = const.$, $y=const.$ により曲面上に生成されるネットを <b>共役網 (conjugate net) </b> と呼ぶ．
 
-いま以下のようにしてポテンシャル $H$, $K$ を導入する：
+いま以下のようにしてポテンシャル $A_1$, $A_2$ を導入する：
 \[
 \tag{1.2}
-a = (\ln H)_y = \frac{H_y}{H}, \quad b = (\ln K)_x = \frac{K_x}{K}.
+a = (\ln A_1)_y = \frac{(A_1)_y}{A_1}, \quad b = (\ln A_2)_x = \frac{(A_2)_x}{A_2}.
 \]
-さらにこれらのポテンシャル $H, K$ を用いて，接ベクトル $\bR_x$, $\bR_y$ を次のように分解する：
+さらにこれらのポテンシャル $A_1$, $A_2$ を用いて，接ベクトル $\bR_x$, $\bR_y$ を次のように分解する：
 \[
 \tag{1.3}
-\bR_x = \bX H, \quad \bR_y = \bY K.
+\bR_x = \bX A_1, \quad \bR_y = \bY A_2.
 \]
 この段階では $\bX$, $\bY$ が単位接ベクトルであることなどは要請しないものとする．
 このとき，2階の双曲型方程式 (1) は以下の1階線型方程式系へ還元される：
@@ -90,17 +90,18 @@ a = (\ln H)_y = \frac{H_y}{H}, \quad b = (\ln K)_x = \frac{K_x}{K}.
 ここで $p$, $q$ は次式で定義される：
 \[
 \tag{1.5}
-H_y = p K, \quad K_x = q H.
+(A_1)_y = p A_2, \quad (A_2)_x = q A_1.
 \]
 式 (1.5) は線型方程式系 (1.4) の随伴 (adjoint) とみなすことができる．
-逆に，与えられたベクトルとスカラーの組 $(\bX, \bY, H, K)$ および函数 $p, q$ が，関係式 (1.4), (1.5) によって関係づけられているとき，線型方程式系 (3) は両立条件 $\bR_{xy} = \bR_{yx}$ を満たし，曲面 $\Sigma \subset \R^3$ が得られる．
+逆に，与えられたベクトルとスカラーの組 $(\bX, \bY, A_1, A_2)$ および函数 $p, q$ が，関係式 (1.4), (1.5) によって関係づけられているとき，
+線型方程式系 (3) は両立条件 $\bR_{xy} = \bR_{yx}$ を満たし，曲面 $\Sigma \subset \R^3$ が得られる．
 
 いま (1.5) の別の解 $(H_*, K_*)$ が得られたとするとき，線型方程式系
 \[
 \tag{1.6}
 (\bR_*)_x = H_* \bX, \quad (\bR_*)_y = K_* \bY,
 \]
-は両立条件 $(\bR_*)_{xy} = (\bR_*)_{yx}$ を満たし，別の曲面 $\Sigma_* \subset \R^3$ が定まる．
+は両立条件 $((\bR_*)_x)_y = ((\bR_*)_y)_x$ を満たし，別の曲面 $\Sigma_* \subset \R^3$ が定まる．
 曲面 $\Sigma_*$ を $\Sigma$ の <b>Combescure変換 (Combescure transformation)</b> と呼ぶ．
 Combescure変換により，対応する点では (座標線に沿った) 接ベクトルが平行である．
 さらにCombescure変換は共役網の条件 (1.1) を保存することが確かめられる．<br>
@@ -138,10 +139,10 @@ E. Combescure, <a href="http://www.numdam.org/item/10.24033/asens.36.pdf" target
 いま，関係式
 \[
 \tag{10}
-H_\circ = - \kappa_1 H, \quad
-K_\circ = - \kappa_2 K,
+H_\circ = - \kappa_1 A_1 = \frac{A_1}{R_1}, \quad
+K_\circ = - \kappa_2 A_2 = \frac{A_2}{R_2},
 \]
-により定義される $\kappa_1$, $\kappa_2$ を主曲率と呼ぶ．
+により定義される $\kappa_1$, $\kappa_2$ を主曲率，$R_1$, $R_2$ を主曲率半径と呼ぶ．
 このとき式 (9) は
 \[
 \tag{11}
@@ -153,8 +154,8 @@ K_\circ = - \kappa_2 K,
 Weingartenの公式はまた，球面 $\Sigma_\circ$ が曲面 $\Sigma$ のCombescure変換であることを示している．
 このとき，曲面の第一・第二基本形式は以下のように表される：
 \[
-I = H^2 \, dx^2 + K^2 \, dy^2, \quad
-II = \kappa_1 H^2 \, dx^2 + \kappa_2 K^2 \, dy^2.
+I = A_1^2 \, dx^2 + A_2^2 \, dy^2, \quad
+II = \kappa_1 A_1^2 \, dx^2 + \kappa_2 A_2^2 \, dy^2.
 \]
 Combescure変換は，曲率線座標も保つことに注意．
 
@@ -269,14 +270,14 @@ $\R^n$ 上に擬内積を定める対称行列を $S = (S^{ij})$ と表す：
 
 主曲率は
 \[
-\kappa_1 = - \frac{H_\circ}{H}, \quad
-\kappa_2 = - \frac{K_\circ}{K}.
+\kappa_1 = - \frac{H_\circ}{A_1}, \quad
+\kappa_2 = - \frac{K_\circ}{A_2}.
 \]
 と表されるので，Gauss曲率 $\cK$，平均曲率 $\cH$ は以下のように表される：
 \[
-\cK = \kappa_1 \kappa_2 = \frac{H_\circ K_\circ}{HK}, \quad
+\cK = \kappa_1 \kappa_2 = \frac{H_\circ K_\circ}{A_1A_2}, \quad
 \cH = \frac{1}{2} (\kappa_1 + \kappa_2) 
-= - \frac{1}{2} \left( \frac{H_\circ}{H} + \frac{K_\circ}{K} \right).
+= - \frac{1}{2} \left( \frac{H_\circ}{A_1} + \frac{K_\circ}{A_2} \right).
 \]
 
 まずは最もシンプルな場合を考えよう．1組のCombescure-related surfaces $\bR_1$, $\bR_2$ を考える：
@@ -336,7 +337,7 @@ H_1 K_1 - H_2 K_2 = 0,
 したがってCombescure変換の組 $\bR_1$, $\bR_2$ は，対応する点においてGauss曲率の絶対値が等しければ，O曲面をなすことがわかる．
 特に $\bR_2$ の値域が単位球面 $S^2$ であれば，$\cK_2 = 1$ であり，$\bR_1$ はGauss曲率一定曲面である．<br>
 
-Gauss曲率が正で一定の曲面は平均曲率一定曲面の平行曲面として表すことができ，Gauss方程式は (座標 $(x, y)$ が双等温座標という条件の下) 楕円型sinh-Godon方程式である：
+Gauss曲率が正で一定の曲面は平均曲率一定曲面の平行曲面として表すことができ，Gauss方程式は (座標 $(x, y)$ が等温曲率線座標という条件の下) 楕円型sinh-Godon方程式である：
 \[
 \omega_{xx} + \omega_{yy} + \sinh \omega = 0.
 \]
@@ -347,7 +348,7 @@ Gauss曲率が負で一定の曲面は (双曲型) sine-Gordon方程式
 </section>
 
 <section>
-<h2>O曲面の例2：双等温曲面・極小曲面</h2>
+<h2>O曲面の例2: 等温曲率線曲面・極小曲面</h2>
 
 $S$ として次の行列を与える：
 \[
@@ -382,7 +383,7 @@ I_2 = H_2^2 (dx^2 + dy^2),
 \]
 となる．
 いいかえると，$\bR_1$, $\bR_2$ はともに等温曲率線座標を許容する．
-等温曲率線座標を許容する曲面を<b>双等温曲面 (isothermic surfaces) </b>と呼ぶ．
+等温曲率線座標を許容する曲面を<b>等温曲率線曲面 (isothermic surfaces) </b>と呼ぶ．
 \[
 H_1 = K_1, \quad H_2 = - K_2,
 \]
@@ -412,10 +413,10 @@ H_1 = K_1, \quad H_2 = - K_2,
 以下ではCMC曲面と呼ぶときにはゼロでない平均曲率一定曲面を指すものとし，平均曲率が$H$で一定の曲面をCMC-$H$曲面と呼ぶ．
 CMC曲面の以下の特徴に着目しよう：
 <ol>
-  <li>CMC曲面は等温曲率線座標を許容する双等温曲面である．</li>
+  <li>CMC曲面は等温曲率線座標を許容する等温曲率線曲面である．</li>
   <li>CMC曲面は，Gauss曲率が正で一定の曲面の平行曲面として表すことができる (Bonnetの定理)．</li>
 </ol>
-すなわちCMC曲面は前節で扱った双等温曲面の枠組みでも，前々節で扱ったGauss曲率一定曲面の枠組みでも捉えられるはずである．
+すなわちCMC曲面は前節で扱った等温曲率線曲面の枠組みでも，前々節で扱ったGauss曲率一定曲面の枠組みでも捉えられるはずである．
 O曲面の枠組みで捉えるための対称行列はそれぞれ
 \[
 \begin{pmatrix}
@@ -448,7 +449,7 @@ P = \frac{1}{2}
 \]
 に注意して，この事実を曲面のレベルで書き直すと，以下のように自然にCMC曲面を捉えることができる．<br>
 
-$\bR_1$, $\bR_2$ を互いにChristoffel変換の関係にある双等温曲面の組とする．
+$\bR_1$, $\bR_2$ を互いにChristoffel変換の関係にある等温曲率線曲面の組とする．
 先の対角化に現れた行列 $P$ を利用して，$\bR_+$, $\bR_-$ を以下のように定める：
 \[
 \begin{pmatrix}
@@ -540,7 +541,7 @@ K_2
 \bR_1 = \bR_+ - \bR_-, \quad
 \bR_2 = \bR_+ - \bR_-,
 \]
-で定まるCombescure変換の組 $(\bR_1, \bR_2)$ は双等温曲面であり，互いにChristoffel変換の関係となる．
+で定まるCombescure変換の組 $(\bR_1, \bR_2)$ は等温曲率線曲面であり，互いにChristoffel変換の関係となる．
 
 </section>
 
@@ -554,14 +555,14 @@ $\alpha$, $\beta$, $\gamma$ を定数として，関係式
 を満たす曲面を<b>線型Weingarten曲面 (linear Weingarten surface)</b>と呼ぶ．
 \[
 \alpha \cK + 2 \beta \cH = \gamma
-\iff \alpha \frac{H_\circ K_\circ}{H K} - \beta \left( \frac{H_\circ}{H} + \frac{K_\circ}{K} \right) = \gamma
-\iff \gamma HK + \beta (H_\circ K + H K_\circ) -\alpha H_\circ K_\circ = 0,
+\iff \alpha \frac{H_\circ K_\circ}{A_1 A_2} - \beta \left( \frac{H_\circ}{A_1} + \frac{K_\circ}{A_2} \right) = \gamma
+\iff \gamma A_1A_2 + \beta (H_\circ A_2 + A_1 K_\circ) -\alpha H_\circ K_\circ = 0,
 \]
 であるから，以下のように書き直すことができる：
 \[
 \uH S \uK^T = 0, \quad
-\uH = (H, H_\circ), \quad
-\uK = (K, \cK_\circ), \quad
+\uH = (A_1, H_\circ), \quad
+\uK = (A_2, \cK_\circ), \quad
 S =
 \begin{pmatrix}
 \gamma & \beta \cr
@@ -625,7 +626,7 @@ H_1 K_2 + H_2 K_1 + H_3 K_3 = 0,
 \]
 が得られる．
 したがってこのとき $\Sigma$, $\Sigma'$ はGuichard曲面のペアとなる．
-行列 $S$ の形からわかるように，Guichard曲面は双等温曲面のある種の一般化である．
+行列 $S$ の形からわかるように，Guichard曲面は等温曲率線曲面のある種の一般化である．
 
 </section>
 
@@ -672,7 +673,7 @@ I_i = (\varphi_i)_x \, dx^2 + (\varphi_i)_y \, dy^2,
 <section>
 <h2>O曲面の例7：$\Omega$ 曲面</h2>
 
-Guichard曲面および双等温曲面のさらなる一般化として，Demoulinにより提唱された $\Omega$ 曲面もO曲面の射程範囲であることが知られている．
+Guichard曲面および等温曲率線曲面のさらなる一般化として，Demoulinにより提唱された $\Omega$ 曲面もO曲面の射程範囲であることが知られている．
 
 <ol>
   <li>A. Demoulin, <a href="https://gallica.bnf.fr/ark:/12148/bpt6k3106p.f590", target="_blank">Sur les surfaces $R$ et les surfaces $\Omega$</a>, <i>C. R. Acad. Sci. Paris</i> <b>153</b> (1911), 590-593.</li>
